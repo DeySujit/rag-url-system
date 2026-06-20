@@ -98,8 +98,13 @@ class IngestStatus(str, Enum):
 
 class IngestRequest(BaseModel):
     url: HttpUrl
-    max_depth: Optional[int] = None
-    max_pages: Optional[int] = None
+    # depth 0 = seed page only (don't follow links); omit to use the configured default
+    max_depth: Optional[int] = Field(default=None, ge=0)
+    # must crawl at least 1 page; 0 would cap the crawl at zero pages
+    max_pages: Optional[int] = Field(default=None, ge=1)
+    # crawl every URL in the site's sitemap.xml instead of following in-page
+    # links; the most reliable way to ingest an entire docs site
+    from_sitemap: bool = False
 
 
 class IngestResult(BaseModel):

@@ -15,6 +15,7 @@ Responsibilities:
 from __future__ import annotations
 
 import asyncio
+import xml.etree.ElementTree as ET
 from collections import deque
 from typing import Iterable, Optional
 from urllib.parse import urldefrag, urljoin, urlparse
@@ -71,19 +72,48 @@ def same_domain(a: str, b: str) -> bool:
     return urlparse(a).netloc == urlparse(b).netloc
 
 
+def _parse_sitemap(xml_text: str) -> tuple[list[str], list[str]]:
+    """Parse sitemap XML -> (page_urls, nested_sitemap_urls).
+
+    Handles both a <urlset> (leaf sitemap listing pages) and a
+    <sitemapindex> (points at other sitemaps). Returns empty lists for
+    anything that isn't valid sitemap XML (e.g. an HTML 404 page).
+    """
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        return [], []
+    root_tag = root.tag.rsplit("}", 1)[-1]  # strip XML namespace
+    locs = [
+        el.text.strip()
+        for el in root.iter()
+        if el.tag.rsplit("}", 1)[-1] == "loc" and el.text and el.text.strip()
+    ]
+    if root_tag == "sitemapindex":
+        return [], locs
+    return locs, []
+
+
 def _strip_boilerplate(soup: BeautifulSoup) -> None:
     for tag in soup(list(_BOILERPLATE_TAGS)):
         tag.decompose()
 
-    for el in soup.find_all(attrs={"role": True}):
-        if str(el.get("role", "")).lower() in _BOILERPLATE_ROLES:
-            el.decompose()
+    # A single pass over every element. Decomposing a parent disconnects its
+    # descendants (their .attrs becomes None), so we must skip any node that a
+    # prior decompose() already freed — otherwise el.get(...) raises.
+    for el in soup.find_all(True):
+        attrs = el.attrs
+        if attrs is None:  # already decomposed as part of an ancestor
+            continue
 
-    for el in soup.find_all(attrs={"class": True}) + soup.find_all(attrs={"id": True}):
-        classes = el.get("class", [])
+        if str(attrs.get("role", "")).lower() in _BOILERPLATE_ROLES:
+            el.decompose()
+            continue
+
+        classes = attrs.get("class", [])
         if isinstance(classes, str):
             classes = [classes]
-        ident = " ".join(filter(None, [" ".join(classes), el.get("id", "")])).lower()
+        ident = " ".join(filter(None, [" ".join(classes), attrs.get("id", "")])).lower()
         if any(hint in ident for hint in _BOILERPLATE_HINTS):
             el.decompose()
 
@@ -318,6 +348,87 @@ class WebCrawler:
                                 queue.append((link, depth + 1, url))
 
         logger.info("Crawl complete: {} pages from {}", len(pages), seed)
+        return pages
+
+    async def fetch_sitemap_urls(self, base_url: str, max_sitemaps: int = 50) -> list[str]:
+        """Discover every page URL from the site's sitemap(s).
+
+        Fetches /sitemap.xml at the domain root and follows sitemap-index
+        files. Returns de-duplicated, normalized URLs (same-domain only when
+        ``same_domain_only`` is set). Use this when a docs site lists all its
+        pages in a sitemap but does not expose them as in-page links.
+        """
+        parsed = urlparse(base_url)
+        root_sitemap = f"{parsed.scheme}://{parsed.netloc}/sitemap.xml"
+
+        headers = {"User-Agent": settings.crawl_user_agent}
+        timeout = httpx.Timeout(settings.crawl_timeout_seconds)
+        collected: list[str] = []
+        visited: set[str] = set()
+
+        async with httpx.AsyncClient(
+            headers=headers, timeout=timeout, follow_redirects=True
+        ) as client:
+            to_visit: deque[str] = deque([root_sitemap])
+            while to_visit and len(visited) < max_sitemaps:
+                sm = to_visit.popleft()
+                if sm in visited:
+                    continue
+                visited.add(sm)
+                try:
+                    resp = await client.get(sm)
+                    resp.raise_for_status()
+                except httpx.HTTPError as exc:
+                    logger.warning("Failed to fetch sitemap {}: {}", sm, exc)
+                    continue
+                pages, nested = _parse_sitemap(resp.text)
+                collected.extend(pages)
+                to_visit.extend(n for n in nested if n not in visited)
+
+        out: list[str] = []
+        seen: set[str] = set()
+        for u in collected:
+            n = normalize_url(u)
+            if self.same_domain_only and not same_domain(n, base_url):
+                continue
+            if n not in seen:
+                seen.add(n)
+                out.append(n)
+        logger.info("Sitemap discovery: {} URLs from {}", len(out), root_sitemap)
+        return out
+
+    async def crawl_urls(self, urls: list[str]) -> list[CrawledPage]:
+        """Crawl an explicit list of URLs (each at depth 0, no link following).
+
+        Concurrency is bounded by ``crawl_concurrency`` so the crawl4ai path
+        does not launch one headless browser per URL all at once.
+        """
+        sem = asyncio.Semaphore(settings.crawl_concurrency)
+        headers = {"User-Agent": settings.crawl_user_agent}
+        timeout = httpx.Timeout(settings.crawl_timeout_seconds)
+        pages: list[CrawledPage] = []
+
+        async with httpx.AsyncClient(
+            headers=headers, timeout=timeout, follow_redirects=True
+        ) as client:
+            async def _bounded(u: str) -> Optional[CrawledPage]:
+                async with sem:
+                    return await self._fetch_page(client, u, 0, None)
+
+            results = await asyncio.gather(
+                *(_bounded(u) for u in urls), return_exceptions=True
+            )
+
+        for url, page in zip(urls, results):
+            if isinstance(page, Exception):
+                logger.warning("Failed to crawl {}: {}", url, page)
+                continue
+            if page is None:
+                continue
+            pages.append(page)
+            logger.info("Crawled [{}/{}] {}", len(pages), len(urls), url)
+
+        logger.info("Sitemap crawl complete: {} pages from {} URLs", len(pages), len(urls))
         return pages
 
     def _next_links(self, links: Iterable[str], seed: str) -> list[str]:

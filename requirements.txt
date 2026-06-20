@@ -15,7 +15,12 @@ langchain-text-splitters>=0.2
 tiktoken>=0.7
 
 # ---- embeddings / llm ----
-openai>=1.40
+# Default embedding backend (OpenAI) + chat LLM. Install extra embedding
+# providers only if you set EMBEDDING_BACKEND to one of them:
+openai>=1.40                # EMBEDDING_BACKEND=openai (default)
+google-genai>=1.0         # EMBEDDING_BACKEND=gemini
+voyageai>=0.3             # EMBEDDING_BACKEND=voyage
+cohere>=5.13              # EMBEDDING_BACKEND=cohere
 tenacity>=8.3
 
 # ---- vector store: default backend (pgvector via Postgres) ----

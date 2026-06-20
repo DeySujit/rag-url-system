@@ -12,6 +12,9 @@ from pydantic import Field, computed_field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 VectorBackend = Literal["pgvector", "pinecone", "qdrant", "weaviate", "milvus"]
+# Providers that actually offer an embeddings API. (Claude/Anthropic and Groq
+# do NOT — they are chat-only — so they are intentionally absent here.)
+EmbeddingBackend = Literal["openai", "gemini", "voyage", "cohere"]
 
 
 class Settings(BaseSettings):
@@ -28,16 +31,22 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     environment: str = Field(default="development")
 
-    # ----- OpenAI or GROQ / Embeddings -----
-    # openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
-    openai_api_key: str = Field(default="", alias="GROQ_API_KEY")
+    # ----- Embeddings (pluggable provider) -----
+    # Choose which provider generates vectors. EMBEDDING_MODEL / EMBEDDING_DIMENSION
+    # must match the chosen backend (see .env.example for per-provider defaults).
+    embedding_backend: EmbeddingBackend = Field(default="openai", alias="EMBEDDING_BACKEND")
     embedding_model: str = "text-embedding-3-large"
-    # text-embedding-3-large supports the `dimensions` param up to 3072.
     embedding_dimension: int = 2048
     embedding_batch_size: int = 128
     embedding_max_concurrency: int = 8
     embedding_max_retries: int = 6
     embedding_timeout_seconds: float = 60.0
+
+    # Per-provider API keys — set only the one(s) you actually use.
+    openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
+    gemini_api_key: str = Field(default="", alias="GEMINI_API_KEY")
+    voyage_api_key: str = Field(default="", alias="VOYAGE_API_KEY")
+    cohere_api_key: str = Field(default="", alias="COHERE_API_KEY")
 
     # ----- Crawler -----
     crawl_max_depth: int = 1          # 0 = only the seed URL

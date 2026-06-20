@@ -1,3 +1,1771 @@
 2026-06-20 15:15:24.267 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
 2026-06-20 15:15:24.348 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
 2026-06-20 15:28:04.944 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 15:59:34.384 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 16:00:02.470 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:00:02.470 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:00:02.685 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:00:03.076 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:00:03.447 | INFO     | app.core.loader:crawl:320 - Crawl complete: 0 pages from https://tripjack.com/page/api-doc
+2026-06-20 16:00:03.447 | WARNING  | app.services.ingest_service:ingest_url:72 - No content crawled from https://tripjack.com/page/api-doc
+2026-06-20 16:01:42.280 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:01:42.281 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:01:42.281 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:01:42.389 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:01:42.702 | INFO     | app.core.loader:crawl:320 - Crawl complete: 0 pages from https://docs.bakuun.com
+2026-06-20 16:01:42.703 | WARNING  | app.services.ingest_service:ingest_url:72 - No content crawled from https://docs.bakuun.com/
+2026-06-20 16:08:50.770 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:08:50.770 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:08:50.770 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:08:50.853 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:08:51.160 | INFO     | app.core.loader:crawl:320 - Crawl complete: 0 pages from https://docs.bakuun.com
+2026-06-20 16:08:51.160 | WARNING  | app.services.ingest_service:ingest_url:72 - No content crawled from https://docs.bakuun.com/
+2026-06-20 16:09:07.801 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 16:09:16.058 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:09:16.058 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:09:16.199 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:09:16.291 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:09:16.651 | INFO     | app.core.loader:crawl:327 - Crawl complete: 0 pages from https://docs.bakuun.com
+2026-06-20 16:09:16.651 | WARNING  | app.services.ingest_service:ingest_url:72 - No content crawled from https://docs.bakuun.com/
+2026-06-20 16:11:25.099 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:11:25.099 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:11:25.100 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:11:25.190 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:11:29.914 | INFO     | app.core.loader:crawl:317 - Crawled [1/10] depth=0 https://docs.bakuun.com
+2026-06-20 16:11:34.624 | INFO     | app.core.loader:crawl:317 - Crawled [2/10] depth=1 https://docs.bakuun.com/go-live-process
+2026-06-20 16:11:34.624 | INFO     | app.core.loader:crawl:327 - Crawl complete: 2 pages from https://docs.bakuun.com
+2026-06-20 16:11:34.636 | INFO     | app.core.splitter:chunk_pages:280 - Produced 4 chunks from 2 pages
+2026-06-20 16:11:34.644 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 4 total -> 4 new, 0 skipped (already indexed/duplicate)
+2026-06-20 16:11:34.644 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 4 texts in 1 batch(es) (backend=voyage model=voyage-3-large dim=2048)
+2026-06-20 16:11:35.565 | INFO     | app.core.vectorstore:upsert:150 - pgvector upserted 4 records
+2026-06-20 16:11:35.574 | SUCCESS  | app.services.ingest_service:ingest_url:111 - Ingest complete https://docs.bakuun.com/: 2 pages, 4 new chunks upserted (skipped 0)
+2026-06-20 16:14:00.330 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:14:00.330 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:14:00.331 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:14:00.409 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:14:04.583 | INFO     | app.core.loader:crawl:317 - Crawled [1/20] depth=0 https://docs.bakuun.com
+2026-06-20 16:14:08.953 | INFO     | app.core.loader:crawl:317 - Crawled [2/20] depth=1 https://docs.bakuun.com/go-live-process
+2026-06-20 16:14:08.953 | INFO     | app.core.loader:crawl:327 - Crawl complete: 2 pages from https://docs.bakuun.com
+2026-06-20 16:14:08.969 | INFO     | app.core.splitter:chunk_pages:280 - Produced 4 chunks from 2 pages
+2026-06-20 16:14:08.973 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 4 total -> 4 new, 0 skipped (already indexed/duplicate)
+2026-06-20 16:14:08.973 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 4 texts in 1 batch(es) (backend=voyage model=voyage-3-large dim=2048)
+2026-06-20 16:14:10.568 | INFO     | app.core.vectorstore:upsert:150 - pgvector upserted 4 records
+2026-06-20 16:14:10.577 | SUCCESS  | app.services.ingest_service:ingest_url:111 - Ingest complete https://docs.bakuun.com/: 2 pages, 4 new chunks upserted (skipped 0)
+2026-06-20 16:20:12.673 | WARNING  | app.core.embeddings:get_embedder:260 - EMBEDDING_MODEL is the OpenAI default but backend is 'voyage'; using 'voyage-3-large' instead. Set EMBEDDING_MODEL explicitly to silence this.
+2026-06-20 16:20:12.673 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 16:20:12.673 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:20:12.755 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:20:17.207 | INFO     | app.core.loader:crawl:317 - Crawled [1/50] depth=0 https://docs.bakuun.com
+2026-06-20 16:20:20.817 | INFO     | app.core.loader:crawl:317 - Crawled [2/50] depth=1 https://docs.bakuun.com/go-live-process
+2026-06-20 16:20:20.817 | INFO     | app.core.loader:crawl:327 - Crawl complete: 2 pages from https://docs.bakuun.com
+2026-06-20 16:20:20.831 | INFO     | app.core.splitter:chunk_pages:280 - Produced 4 chunks from 2 pages
+2026-06-20 16:20:20.833 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 4 total -> 0 new, 4 skipped (already indexed/duplicate)
+2026-06-20 16:20:20.833 | INFO     | app.services.ingest_service:ingest_url:88 - Nothing new to index for https://docs.bakuun.com/
+2026-06-20 16:29:34.506 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 16:29:40.288 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: cohere
+2026-06-20 16:29:41.314 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:29:41.407 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:29:43.365 | INFO     | app.core.loader:fetch_sitemap_urls:397 - Sitemap discovery: 149 URLs from https://docs.bakuun.com/sitemap.xml
+2026-06-20 16:36:28.028 | INFO     | app.core.loader:crawl_urls:429 - Crawled [1/149] https://docs.bakuun.com/go-live-process
+2026-06-20 16:36:28.028 | INFO     | app.core.loader:crawl_urls:429 - Crawled [2/149] https://docs.bakuun.com/modify-booking
+2026-06-20 16:36:28.028 | INFO     | app.core.loader:crawl_urls:429 - Crawled [3/149] https://docs.bakuun.com/availability-room-level
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [4/149] https://docs.bakuun.com/HMJE-push-property
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [5/149] https://docs.bakuun.com/room-base-rates
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [6/149] https://docs.bakuun.com
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [7/149] https://docs.bakuun.com/read-properties
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [8/149] https://docs.bakuun.com/faq
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [9/149] https://docs.bakuun.com/Q5ur-search-by-city
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [10/149] https://docs.bakuun.com/new-booking
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [11/149] https://docs.bakuun.com/search-results-mps-multi-property-shopping-occupancy-base
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [12/149] https://docs.bakuun.com/search-by-geo
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [13/149] https://docs.bakuun.com/A8OC-booking
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [14/149] https://docs.bakuun.com/single-booking-retrieval
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [15/149] https://docs.bakuun.com/bulk-bookings-retrieval
+2026-06-20 16:36:28.032 | INFO     | app.core.loader:crawl_urls:429 - Crawled [16/149] https://docs.bakuun.com/availability-rate-plan-level
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [17/149] https://docs.bakuun.com/iGJW-mapping
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [18/149] https://docs.bakuun.com/cRIu-get-property
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [19/149] https://docs.bakuun.com/TNio-search-by-id
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [20/149] https://docs.bakuun.com/multi-property-shopping-mps
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [21/149] https://docs.bakuun.com/search-by-id
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [22/149] https://docs.bakuun.com/pre-booking
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [23/149] https://docs.bakuun.com/buyer-api-pull
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [24/149] https://docs.bakuun.com/push-property
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [25/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan-level
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [26/149] https://docs.bakuun.com/length-of-stay-rates-los
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [27/149] https://docs.bakuun.com/length-of-stay-rates-los-occupancy-based
+2026-06-20 16:36:28.039 | INFO     | app.core.loader:crawl_urls:429 - Crawled [28/149] https://docs.bakuun.com/stop-sales-restriction-rate-plan-level
+2026-06-20 16:36:28.048 | INFO     | app.core.loader:crawl_urls:429 - Crawled [29/149] https://docs.bakuun.com/minimum-length-of-stay-rate-plan-level
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [30/149] https://docs.bakuun.com/Xt-i-booking
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [31/149] https://docs.bakuun.com/hurdles-rates
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [32/149] https://docs.bakuun.com/acknowledgement
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [33/149] https://docs.bakuun.com/occupancy-based-rates-extra-adults
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [34/149] https://docs.bakuun.com/closed-arrival-restriction-room-level
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [35/149] https://docs.bakuun.com/room-level
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [36/149] https://docs.bakuun.com/rate-plan-level
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [37/149] https://docs.bakuun.com/DA7T-cancel
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [38/149] https://docs.bakuun.com/get-listing
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [39/149] https://docs.bakuun.com/mapping
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [40/149] https://docs.bakuun.com/max-length-of-stay-arrival-at-rate-plan-level
+2026-06-20 16:36:28.049 | INFO     | app.core.loader:crawl_urls:429 - Crawled [41/149] https://docs.bakuun.com/nawh-get-property
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [42/149] https://docs.bakuun.com/Cuuj-ari
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [43/149] https://docs.bakuun.com/dAqe-cancellation-and-deposit
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [44/149] https://docs.bakuun.com/HkA8-rates-update
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [45/149] https://docs.bakuun.com/buyer-api-push
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [46/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-room-level
+2026-06-20 16:36:28.059 | INFO     | app.core.loader:crawl_urls:429 - Crawled [47/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-at-rate-plan-level-cloned
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [48/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan-level
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [49/149] https://docs.bakuun.com/fetch-rate-plan-details
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [50/149] https://docs.bakuun.com/search-results-sps-single-property-shopping
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [51/149] https://docs.bakuun.com/AN3N-search-by-id
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [52/149] https://docs.bakuun.com/cancel-booking
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [53/149] https://docs.bakuun.com/single-property-shopping-sps
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [54/149] https://docs.bakuun.com/occupancy-base-rates
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [55/149] https://docs.bakuun.com/search-by-city
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [56/149] https://docs.bakuun.com/multi-property-shopping-mps-room-base-rates
+2026-06-20 16:36:28.064 | INFO     | app.core.loader:crawl_urls:429 - Crawled [57/149] https://docs.bakuun.com/search-results-sps-single-property-shopping-occupancy-base
+2026-06-20 16:36:28.070 | INFO     | app.core.loader:crawl_urls:429 - Crawled [58/149] https://docs.bakuun.com/C5zx-occupancy-base-rates
+2026-06-20 16:36:28.070 | INFO     | app.core.loader:crawl_urls:429 - Crawled [59/149] https://docs.bakuun.com/6ne6-search-by-country
+2026-06-20 16:36:28.070 | INFO     | app.core.loader:crawl_urls:429 - Crawled [60/149] https://docs.bakuun.com/stop-sell-rate-plan-level
+2026-06-20 16:36:28.070 | INFO     | app.core.loader:crawl_urls:429 - Crawled [61/149] https://docs.bakuun.com/max-stay-rate-plan-level
+2026-06-20 16:36:28.070 | INFO     | app.core.loader:crawl_urls:429 - Crawled [62/149] https://docs.bakuun.com/min-advance-booking-offset-rate-plan
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [63/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [64/149] https://docs.bakuun.com/fVK3-close-arrival-rate-plan
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [65/149] https://docs.bakuun.com/Wbt4-ari
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [66/149] https://docs.bakuun.com/third-party-supplier-push
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [67/149] https://docs.bakuun.com/27ot-minimum-stay-arrival-rate-plan-level
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [68/149] https://docs.bakuun.com/LUKC-max-stay-arrival-rate-plan-level
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [69/149] https://docs.bakuun.com/stop-sales-restriction-room-level
+2026-06-20 16:36:28.074 | INFO     | app.core.loader:crawl_urls:429 - Crawled [70/149] https://docs.bakuun.com/occupancy-based-rates
+2026-06-20 16:36:28.079 | INFO     | app.core.loader:crawl_urls:429 - Crawled [71/149] https://docs.bakuun.com/minimum-length-of-stay-room-level
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [72/149] https://docs.bakuun.com/max-length-of-stay-room-leve
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [73/149] https://docs.bakuun.com/basic-rates
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [74/149] https://docs.bakuun.com/J4mW-read-booking
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [75/149] https://docs.bakuun.com/closed-departure-restriction-rate-plan-level
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [76/149] https://docs.bakuun.com/D_UU-acknowledgement
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [77/149] https://docs.bakuun.com/read-property
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [78/149] https://docs.bakuun.com/minimum-stay-rate-plan-level
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [79/149] https://docs.bakuun.com/cancellation-and-deposit
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [80/149] https://docs.bakuun.com/4L6j-search-by-id
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [81/149] https://docs.bakuun.com/release-rate-plan-level
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [82/149] https://docs.bakuun.com/fetch-room-details
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [83/149] https://docs.bakuun.com/sell-threshold
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [84/149] https://docs.bakuun.com/max-length-of-stay-rate-plan-level
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [85/149] https://docs.bakuun.com/o6o_-error-code
+2026-06-20 16:36:28.080 | INFO     | app.core.loader:crawl_urls:429 - Crawled [86/149] https://docs.bakuun.com/max-advance-booking-offset-room-level
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [87/149] https://docs.bakuun.com/closed-arrival-restriction-rate-plan-level
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [88/149] https://docs.bakuun.com/max-length-of-stay-arrival-room-level
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [89/149] https://docs.bakuun.com/room-based-rates
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [90/149] https://docs.bakuun.com/closed-departure-restriction-room-level
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [91/149] https://docs.bakuun.com/5NcU-search-by-geo
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [92/149] https://docs.bakuun.com/yYGG-error-codes
+2026-06-20 16:36:28.091 | INFO     | app.core.loader:crawl_urls:429 - Crawled [93/149] https://docs.bakuun.com/X5w1-rate-plan-level-restrictions
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [94/149] https://docs.bakuun.com/close-departure-rate-plan
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [95/149] https://docs.bakuun.com/fwGL-pre-booking
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [96/149] https://docs.bakuun.com/minimum-advance-booking-offset-room-level
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [97/149] https://docs.bakuun.com/new
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [98/149] https://docs.bakuun.com/search-by-country
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [99/149] https://docs.bakuun.com/rates
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [100/149] https://docs.bakuun.com/modify
+2026-06-20 16:36:28.095 | INFO     | app.core.loader:crawl_urls:429 - Crawled [101/149] https://docs.bakuun.com/single-booking
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [102/149] https://docs.bakuun.com/close-arrival-room-level
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [103/149] https://docs.bakuun.com/ari
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [104/149] https://docs.bakuun.com/max-stay-arrival-rate-plan-level
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [105/149] https://docs.bakuun.com/stop-sell-room-level
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [106/149] https://docs.bakuun.com/0D7o-sell-threshold
+2026-06-20 16:36:28.101 | INFO     | app.core.loader:crawl_urls:429 - Crawled [107/149] https://docs.bakuun.com/booking
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [108/149] https://docs.bakuun.com/account-migration
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [109/149] https://docs.bakuun.com/channelsgate-marketplace-account-migration-steps
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [110/149] https://docs.bakuun.com/VRZB-los-rates
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [111/149] https://docs.bakuun.com/_HmK-modify
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [112/149] https://docs.bakuun.com/LG-V-read-booking
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [113/149] https://docs.bakuun.com/GeYK-availability-room-level
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [114/149] https://docs.bakuun.com/NJB--push-property
+2026-06-20 16:36:28.106 | INFO     | app.core.loader:crawl_urls:429 - Crawled [115/149] https://docs.bakuun.com/fIRF-hurdles-rates
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [116/149] https://docs.bakuun.com/error-codes
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [117/149] https://docs.bakuun.com/get-property
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [118/149] https://docs.bakuun.com/close-arrival-rate-plan
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [119/149] https://docs.bakuun.com/rate-plan-level-restrictions
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [120/149] https://docs.bakuun.com/multi-booking
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [121/149] https://docs.bakuun.com/create
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [122/149] https://docs.bakuun.com/read-booking
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [123/149] https://docs.bakuun.com/M_WW-occupancy-based-rates
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [124/149] https://docs.bakuun.com/i8rk-booking
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [125/149] https://docs.bakuun.com/xh8u-multi-booking
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [126/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [127/149] https://docs.bakuun.com/oNUl-occupancy-based-rates
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [128/149] https://docs.bakuun.com/direct-supplier-push
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [129/149] https://docs.bakuun.com/kEcQ-read-property
+2026-06-20 16:36:28.111 | INFO     | app.core.loader:crawl_urls:429 - Crawled [130/149] https://docs.bakuun.com/4eXH-mapping
+2026-06-20 16:36:28.122 | INFO     | app.core.loader:crawl_urls:429 - Crawled [131/149] https://docs.bakuun.com/EFIT-single-booking
+2026-06-20 16:36:28.122 | INFO     | app.core.loader:crawl_urls:429 - Crawled [132/149] https://docs.bakuun.com/room-level-restrictions
+2026-06-20 16:36:28.122 | INFO     | app.core.loader:crawl_urls:429 - Crawled [133/149] https://docs.bakuun.com/los-rates
+2026-06-20 16:36:28.122 | INFO     | app.core.loader:crawl_urls:429 - Crawled [134/149] https://docs.bakuun.com/error-code
+2026-06-20 16:36:28.122 | INFO     | app.core.loader:crawl_urls:429 - Crawled [135/149] https://docs.bakuun.com/xNI4-minimum-stay-rate-plan-level
+2026-06-20 16:36:28.127 | INFO     | app.core.loader:crawl_urls:429 - Crawled [136/149] https://docs.bakuun.com/t8wS-max-advance-booking-offset-rate-plan
+2026-06-20 16:36:28.129 | INFO     | app.core.loader:crawl_urls:429 - Crawled [137/149] https://docs.bakuun.com/stop-sell-rate-plan
+2026-06-20 16:36:28.131 | INFO     | app.core.loader:crawl_urls:429 - Crawled [138/149] https://docs.bakuun.com/4gTP-modify
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [139/149] https://docs.bakuun.com/close-departure-room-level
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [140/149] https://docs.bakuun.com/PktI-cancellation-and-deposit
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [141/149] https://docs.bakuun.com/r_Uv-max-stay-rate-plan-level
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [142/149] https://docs.bakuun.com/cancel
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [143/149] https://docs.bakuun.com/ygpB-close-departure-rate-plan
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [144/149] https://docs.bakuun.com/rates-update
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [145/149] https://docs.bakuun.com/minimum-stay-arrival-rate-plan-level
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [146/149] https://docs.bakuun.com/pt1h-cancel
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [147/149] https://docs.bakuun.com/SHcm-hurdles-rates
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [148/149] https://docs.bakuun.com/VWIX-create
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:429 - Crawled [149/149] https://docs.bakuun.com/ratedock-account-migration-steps
+2026-06-20 16:36:28.132 | INFO     | app.core.loader:crawl_urls:431 - Sitemap crawl complete: 149 pages from 149 URLs
+2026-06-20 16:36:29.272 | INFO     | app.core.splitter:chunk_pages:280 - Produced 254 chunks from 149 pages
+2026-06-20 16:36:29.287 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 254 total -> 250 new, 4 skipped (already indexed/duplicate)
+2026-06-20 16:36:29.292 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 250 texts in 2 batch(es) (backend=cohere model=embed-v4.0 dim=2048)
+2026-06-20 16:36:52.741 | ERROR    | app.services.ingest_service:ingest_url:127 - Ingestion failed for https://docs.bakuun.com/
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "D:\Work\Personal\RAG\venv\Scripts\uvicorn.exe\__main__.py", line 7, in <module>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function Command.main at 0x000002306CD0BB00>
+           └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000002306A899AF0>
+         │    └ <function Command.invoke at 0x000002306CD0B7E0>
+         └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │   │      │    │           └ <click.core.Context object at 0x000002306A899AF0>
+           │   │      │    └ <function main at 0x000002306CFAA840>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x000002306CD0AA20>
+           └ <click.core.Context object at 0x000002306A899AF0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           │         │       └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │         └ ()
+           └ <function main at 0x000002306CFAA840>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+    └ <function run at 0x000002306CD61440>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+    │      └ <function Server.run at 0x000002306CDF62A0>
+    └ <uvicorn.server.Server object at 0x000002306CF9FE90>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000002306CD3E840>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000002306CF9E720>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000002306CF9FE90>
+           │           │    │             └ None
+           │           │    └ <function Server.serve at 0x000002306CDF6340>
+           │           └ <uvicorn.server.Server object at 0x000002306CF9FE90>
+           └ <function run at 0x000002306A540680>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x00000230150E5460>
+           │      └ <function Runner.run at 0x000002306C613740>
+           └ <asyncio.runners.Runner object at 0x0000023014CB71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py:79>...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000002306C6113A0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000023014CB71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000002306C6CCF40>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000002306C613100>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000002306C55D440>
+    └ <Handle Task.task_wakeup(<_GatheringFu...equestError()>)>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<_GatheringFu...equestError()>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<_GatheringFu...equestError()>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<_GatheringFu...equestError()>)>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000023014F8B8F0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023015...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000023015102150>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000023014F8B8F0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023015...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023015...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000230151B5760>
+          └ <fastapi.applications.FastAPI object at 0x0000023015102150>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000230152C96C0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000023015124D40>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000230151B5760>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000230152C96C0>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x00000230152D9E80>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000023015124680>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000023015124D40>
+          └ <function wrap_app_handling_exceptions at 0x000002306DDB6200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000023015124680>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x0000023015102330>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000023015124680>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000023015102330>>
+          └ <fastapi.routing.APIRouter object at 0x0000023015102330>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function _IncludedRouter.handle at 0x000002306DDFBD80>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000002306DE22900>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+          │    │               │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │    │               │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │    │               │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    │               └ <function APIRouter.handle at 0x000002306DE18900>
+          │    └ <fastapi.routing.APIRouter object at 0x000002306DE22900>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000002306DE22900>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+          │               │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │               │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │               │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │               └ <function _IncludedRouter._handle_selected at 0x000002306DDFBE20>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000002306DE22900>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+          │              │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │              │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │              │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │              └ <function APIRoute.handle at 0x000002306DDFA020>
+          └ APIRoute(path='/ingest', name='submit_ingest', methods=['POST'])
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app at 0x00000230152C9940>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C98A0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x00000230152DA420>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x00000230152C9A80>
+          └ <function wrap_app_handling_exceptions at 0x000002306DDB6200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000230152C9BC0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000023...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x00000230152C9A80>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x00000230152DA420>
+                     └ <function get_request_handler.<locals>.app at 0x00000230152C99E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 683, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000002306DDF9620>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 337, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'req': IngestRequest(url=HttpUrl('https://docs.bakuun.com/'), max_depth=None, max_pages=None, from_sitemap=True)}
+                 │         └ <function submit_ingest at 0x00000230148EFA60>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\api\routes\ingest.py", line 20, in submit_ingest
+    return await ingest_url(
+                 └ <function ingest_url at 0x000002306DF05C60>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 153, in ingest_url
+    return await service.ingest_url(
+                 │       └ <function IngestionService.ingest_url at 0x00000230148EF920>
+                 └ <app.services.ingest_service.IngestionService object at 0x00000230152DA900>
+
+> File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 107, in ingest_url
+    vectors = await self.embedder.embed_texts([c.text for c in new_chunks])
+                    │    │        │                            └ [Chunk(text='## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs...
+                    │    │        └ <function BaseEmbedder.embed_texts at 0x000002306E029440>
+                    │    └ <app.core.embeddings.CohereEmbedder object at 0x00000230152716D0>
+                    └ <app.services.ingest_service.IngestionService object at 0x00000230152DA900>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 98, in embed_texts
+    results = await asyncio.gather(*(run(i, b) for i, b in enumerate(batches)))
+                    │       │        │                               └ [['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJ...
+                    │       │        └ <function BaseEmbedder.embed_texts.<locals>.run at 0x0000023016D1E2A0>
+                    │       └ <function gather at 0x000002306C60DE40>
+                    └ <module 'asyncio' from 'C:\\Users\\cepl\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\__init__.py'>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 94, in run
+    vectors = await self._embed_batch(batch, "document")
+                    │    │            └ ['": "10", 237 "taxCharge": true 238 } 239 ] 240 } 241 ], 242 "payAtPropertyData": [ 243 { 244 "taxType": "Tax", 245 "taxAppl...
+                    │    └ <function BaseEmbedder._embed_batch at 0x000002306E0293A0>
+                    └ <app.core.embeddings.CohereEmbedder object at 0x00000230152716D0>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 71, in _embed_batch
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x0000023016AF7890>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 170, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 2405563698352: attempt #6; slept for 19.12; last result: failed (BadRequestError headers: {'access-control-ex...
+               │    │                └ <AsyncRetrying object at 0x23016c51e20 (stop=<tenacity.stop.stop_after_attempt object at 0x0000023016950110>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000002306DF75080>
+               └ <AsyncRetrying object at 0x23016c51e20 (stop=<tenacity.stop.stop_after_attempt object at 0x0000023016950110>, wait=<tenacity....
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 2405563698352: attempt #6; slept for 19.12; last result: failed (BadRequestError headers: {'access-control-ex...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000023016D1DEE0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 2405563698352: attempt #6; slept for 19.12; last result: failed (BadRequestError headers: {'access-control-e...
+           └ <function BaseRetrying._post_stop_check_actions.<locals>.exc_check at 0x0000023016D1C040>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          │         └ <function RetryError.reraise at 0x000002306DF5E480>
+          └ RetryError(<Future at 0x23017c447a0 state=finished raised BadRequestError>)
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          │    │            └ <function Future.result at 0x000002306AC19EE0>
+          │    └ <Future at 0x23017c447a0 state=finished raised BadRequestError>
+          └ RetryError(<Future at 0x23017c447a0 state=finished raised BadRequestError>)
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 79, in _embed_batch
+    return await self._embed_raw(batch, input_type)
+                 │    │          │      └ 'document'
+                 │    │          └ ['": "10", 237 "taxCharge": true 238 } 239 ] 240 } 241 ], 242 "payAtPropertyData": [ 243 { 244 "taxType": "Tax", 245 "taxAppl...
+                 │    └ <function CohereEmbedder._embed_raw at 0x000002306E029A80>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x00000230152716D0>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 206, in _embed_raw
+    resp = await self._client.embed(
+                 │    │       └ <function AsyncV2Client.embed at 0x00000230155936A0>
+                 │    └ <cohere.client_v2.AsyncClientV2 object at 0x00000230151B57C0>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x00000230152716D0>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\client.py", line 1050, in embed
+    _response = await self._raw_client.embed(
+                      │    └ <cohere.client_v2._CombinedRawClient object at 0x00000230157A47D0>
+                      └ <cohere.client_v2.AsyncClientV2 object at 0x00000230151B57C0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\raw_client.py", line 1992, in embed
+    raise BadRequestError(
+          └ <class 'cohere.errors.bad_request_error.BadRequestError'>
+
+cohere.errors.bad_request_error.BadRequestError: headers: {'access-control-expose-headers': 'X-Debug-Trace-ID', 'cache-control': 'no-cache, no-store, no-transform, must-revalidate, private, max-age=0', 'content-encoding': 'gzip', 'content-type': 'application/json', 'expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'pragma': 'no-cache', 'vary': 'Origin,Accept-Encoding', 'x-accel-expires': '0', 'x-debug-trace-id': '9e9b8a174e38371e2425c28447d2e484', 'x-endpoint-monthly-call-limit': '1000', 'x-trial-endpoint-call-limit': '100', 'x-trial-endpoint-call-remaining': '89', 'date': 'Sat, 20 Jun 2026 11:06:52 GMT', 'x-envoy-upstream-service-time': '11', 'server': 'envoy', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'transfer-encoding': 'chunked'}, status_code: 400, body: {'id': '14163116-def8-4e60-9621-5b8effd392ae', 'message': 'invalid request: total number of texts must be at most 96 - received 122'}
+2026-06-20 16:39:39.481 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 16:39:58.192 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: cohere
+2026-06-20 16:39:58.953 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 16:39:59.045 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 16:39:59.659 | INFO     | app.core.loader:fetch_sitemap_urls:397 - Sitemap discovery: 149 URLs from https://docs.bakuun.com/sitemap.xml
+2026-06-20 16:46:37.172 | INFO     | app.core.loader:crawl_urls:429 - Crawled [1/149] https://docs.bakuun.com/go-live-process
+2026-06-20 16:46:37.172 | INFO     | app.core.loader:crawl_urls:429 - Crawled [2/149] https://docs.bakuun.com/modify-booking
+2026-06-20 16:46:37.172 | INFO     | app.core.loader:crawl_urls:429 - Crawled [3/149] https://docs.bakuun.com/availability-room-level
+2026-06-20 16:46:37.174 | INFO     | app.core.loader:crawl_urls:429 - Crawled [4/149] https://docs.bakuun.com/HMJE-push-property
+2026-06-20 16:46:37.174 | INFO     | app.core.loader:crawl_urls:429 - Crawled [5/149] https://docs.bakuun.com/room-base-rates
+2026-06-20 16:46:37.174 | INFO     | app.core.loader:crawl_urls:429 - Crawled [6/149] https://docs.bakuun.com
+2026-06-20 16:46:37.174 | INFO     | app.core.loader:crawl_urls:429 - Crawled [7/149] https://docs.bakuun.com/read-properties
+2026-06-20 16:46:37.174 | INFO     | app.core.loader:crawl_urls:429 - Crawled [8/149] https://docs.bakuun.com/faq
+2026-06-20 16:46:37.176 | INFO     | app.core.loader:crawl_urls:429 - Crawled [9/149] https://docs.bakuun.com/Q5ur-search-by-city
+2026-06-20 16:46:37.176 | INFO     | app.core.loader:crawl_urls:429 - Crawled [10/149] https://docs.bakuun.com/new-booking
+2026-06-20 16:46:37.177 | INFO     | app.core.loader:crawl_urls:429 - Crawled [11/149] https://docs.bakuun.com/search-results-mps-multi-property-shopping-occupancy-base
+2026-06-20 16:46:37.177 | INFO     | app.core.loader:crawl_urls:429 - Crawled [12/149] https://docs.bakuun.com/search-by-geo
+2026-06-20 16:46:37.179 | INFO     | app.core.loader:crawl_urls:429 - Crawled [13/149] https://docs.bakuun.com/A8OC-booking
+2026-06-20 16:46:37.180 | INFO     | app.core.loader:crawl_urls:429 - Crawled [14/149] https://docs.bakuun.com/single-booking-retrieval
+2026-06-20 16:46:37.180 | INFO     | app.core.loader:crawl_urls:429 - Crawled [15/149] https://docs.bakuun.com/bulk-bookings-retrieval
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [16/149] https://docs.bakuun.com/availability-rate-plan-level
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [17/149] https://docs.bakuun.com/iGJW-mapping
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [18/149] https://docs.bakuun.com/cRIu-get-property
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [19/149] https://docs.bakuun.com/TNio-search-by-id
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [20/149] https://docs.bakuun.com/multi-property-shopping-mps
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [21/149] https://docs.bakuun.com/search-by-id
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [22/149] https://docs.bakuun.com/pre-booking
+2026-06-20 16:46:37.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [23/149] https://docs.bakuun.com/buyer-api-pull
+2026-06-20 16:46:37.191 | INFO     | app.core.loader:crawl_urls:429 - Crawled [24/149] https://docs.bakuun.com/push-property
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [25/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan-level
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [26/149] https://docs.bakuun.com/length-of-stay-rates-los
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [27/149] https://docs.bakuun.com/length-of-stay-rates-los-occupancy-based
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [28/149] https://docs.bakuun.com/stop-sales-restriction-rate-plan-level
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [29/149] https://docs.bakuun.com/minimum-length-of-stay-rate-plan-level
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [30/149] https://docs.bakuun.com/Xt-i-booking
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [31/149] https://docs.bakuun.com/hurdles-rates
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [32/149] https://docs.bakuun.com/acknowledgement
+2026-06-20 16:46:37.193 | INFO     | app.core.loader:crawl_urls:429 - Crawled [33/149] https://docs.bakuun.com/occupancy-based-rates-extra-adults
+2026-06-20 16:46:37.201 | INFO     | app.core.loader:crawl_urls:429 - Crawled [34/149] https://docs.bakuun.com/closed-arrival-restriction-room-level
+2026-06-20 16:46:37.201 | INFO     | app.core.loader:crawl_urls:429 - Crawled [35/149] https://docs.bakuun.com/room-level
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [36/149] https://docs.bakuun.com/rate-plan-level
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [37/149] https://docs.bakuun.com/DA7T-cancel
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [38/149] https://docs.bakuun.com/get-listing
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [39/149] https://docs.bakuun.com/mapping
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [40/149] https://docs.bakuun.com/max-length-of-stay-arrival-at-rate-plan-level
+2026-06-20 16:46:37.203 | INFO     | app.core.loader:crawl_urls:429 - Crawled [41/149] https://docs.bakuun.com/nawh-get-property
+2026-06-20 16:46:37.208 | INFO     | app.core.loader:crawl_urls:429 - Crawled [42/149] https://docs.bakuun.com/Cuuj-ari
+2026-06-20 16:46:37.208 | INFO     | app.core.loader:crawl_urls:429 - Crawled [43/149] https://docs.bakuun.com/dAqe-cancellation-and-deposit
+2026-06-20 16:46:37.208 | INFO     | app.core.loader:crawl_urls:429 - Crawled [44/149] https://docs.bakuun.com/HkA8-rates-update
+2026-06-20 16:46:37.208 | INFO     | app.core.loader:crawl_urls:429 - Crawled [45/149] https://docs.bakuun.com/buyer-api-push
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [46/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-room-level
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [47/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-at-rate-plan-level-cloned
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [48/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan-level
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [49/149] https://docs.bakuun.com/fetch-rate-plan-details
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [50/149] https://docs.bakuun.com/search-results-sps-single-property-shopping
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [51/149] https://docs.bakuun.com/AN3N-search-by-id
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [52/149] https://docs.bakuun.com/cancel-booking
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [53/149] https://docs.bakuun.com/single-property-shopping-sps
+2026-06-20 16:46:37.212 | INFO     | app.core.loader:crawl_urls:429 - Crawled [54/149] https://docs.bakuun.com/occupancy-base-rates
+2026-06-20 16:46:37.220 | INFO     | app.core.loader:crawl_urls:429 - Crawled [55/149] https://docs.bakuun.com/search-by-city
+2026-06-20 16:46:37.220 | INFO     | app.core.loader:crawl_urls:429 - Crawled [56/149] https://docs.bakuun.com/multi-property-shopping-mps-room-base-rates
+2026-06-20 16:46:37.220 | INFO     | app.core.loader:crawl_urls:429 - Crawled [57/149] https://docs.bakuun.com/search-results-sps-single-property-shopping-occupancy-base
+2026-06-20 16:46:37.222 | INFO     | app.core.loader:crawl_urls:429 - Crawled [58/149] https://docs.bakuun.com/C5zx-occupancy-base-rates
+2026-06-20 16:46:37.222 | INFO     | app.core.loader:crawl_urls:429 - Crawled [59/149] https://docs.bakuun.com/6ne6-search-by-country
+2026-06-20 16:46:37.224 | INFO     | app.core.loader:crawl_urls:429 - Crawled [60/149] https://docs.bakuun.com/stop-sell-rate-plan-level
+2026-06-20 16:46:37.224 | INFO     | app.core.loader:crawl_urls:429 - Crawled [61/149] https://docs.bakuun.com/max-stay-rate-plan-level
+2026-06-20 16:46:37.224 | INFO     | app.core.loader:crawl_urls:429 - Crawled [62/149] https://docs.bakuun.com/min-advance-booking-offset-rate-plan
+2026-06-20 16:46:37.224 | INFO     | app.core.loader:crawl_urls:429 - Crawled [63/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan
+2026-06-20 16:46:37.228 | INFO     | app.core.loader:crawl_urls:429 - Crawled [64/149] https://docs.bakuun.com/fVK3-close-arrival-rate-plan
+2026-06-20 16:46:37.228 | INFO     | app.core.loader:crawl_urls:429 - Crawled [65/149] https://docs.bakuun.com/Wbt4-ari
+2026-06-20 16:46:37.228 | INFO     | app.core.loader:crawl_urls:429 - Crawled [66/149] https://docs.bakuun.com/third-party-supplier-push
+2026-06-20 16:46:37.228 | INFO     | app.core.loader:crawl_urls:429 - Crawled [67/149] https://docs.bakuun.com/27ot-minimum-stay-arrival-rate-plan-level
+2026-06-20 16:46:37.228 | INFO     | app.core.loader:crawl_urls:429 - Crawled [68/149] https://docs.bakuun.com/LUKC-max-stay-arrival-rate-plan-level
+2026-06-20 16:46:37.233 | INFO     | app.core.loader:crawl_urls:429 - Crawled [69/149] https://docs.bakuun.com/stop-sales-restriction-room-level
+2026-06-20 16:46:37.233 | INFO     | app.core.loader:crawl_urls:429 - Crawled [70/149] https://docs.bakuun.com/occupancy-based-rates
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [71/149] https://docs.bakuun.com/minimum-length-of-stay-room-level
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [72/149] https://docs.bakuun.com/max-length-of-stay-room-leve
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [73/149] https://docs.bakuun.com/basic-rates
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [74/149] https://docs.bakuun.com/J4mW-read-booking
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [75/149] https://docs.bakuun.com/closed-departure-restriction-rate-plan-level
+2026-06-20 16:46:37.235 | INFO     | app.core.loader:crawl_urls:429 - Crawled [76/149] https://docs.bakuun.com/D_UU-acknowledgement
+2026-06-20 16:46:37.240 | INFO     | app.core.loader:crawl_urls:429 - Crawled [77/149] https://docs.bakuun.com/read-property
+2026-06-20 16:46:37.240 | INFO     | app.core.loader:crawl_urls:429 - Crawled [78/149] https://docs.bakuun.com/minimum-stay-rate-plan-level
+2026-06-20 16:46:37.240 | INFO     | app.core.loader:crawl_urls:429 - Crawled [79/149] https://docs.bakuun.com/cancellation-and-deposit
+2026-06-20 16:46:37.243 | INFO     | app.core.loader:crawl_urls:429 - Crawled [80/149] https://docs.bakuun.com/4L6j-search-by-id
+2026-06-20 16:46:37.243 | INFO     | app.core.loader:crawl_urls:429 - Crawled [81/149] https://docs.bakuun.com/release-rate-plan-level
+2026-06-20 16:46:37.243 | INFO     | app.core.loader:crawl_urls:429 - Crawled [82/149] https://docs.bakuun.com/fetch-room-details
+2026-06-20 16:46:37.243 | INFO     | app.core.loader:crawl_urls:429 - Crawled [83/149] https://docs.bakuun.com/sell-threshold
+2026-06-20 16:46:37.243 | INFO     | app.core.loader:crawl_urls:429 - Crawled [84/149] https://docs.bakuun.com/max-length-of-stay-rate-plan-level
+2026-06-20 16:46:37.248 | INFO     | app.core.loader:crawl_urls:429 - Crawled [85/149] https://docs.bakuun.com/o6o_-error-code
+2026-06-20 16:46:37.248 | INFO     | app.core.loader:crawl_urls:429 - Crawled [86/149] https://docs.bakuun.com/max-advance-booking-offset-room-level
+2026-06-20 16:46:37.250 | INFO     | app.core.loader:crawl_urls:429 - Crawled [87/149] https://docs.bakuun.com/closed-arrival-restriction-rate-plan-level
+2026-06-20 16:46:37.250 | INFO     | app.core.loader:crawl_urls:429 - Crawled [88/149] https://docs.bakuun.com/max-length-of-stay-arrival-room-level
+2026-06-20 16:46:37.250 | INFO     | app.core.loader:crawl_urls:429 - Crawled [89/149] https://docs.bakuun.com/room-based-rates
+2026-06-20 16:46:37.252 | INFO     | app.core.loader:crawl_urls:429 - Crawled [90/149] https://docs.bakuun.com/closed-departure-restriction-room-level
+2026-06-20 16:46:37.253 | INFO     | app.core.loader:crawl_urls:429 - Crawled [91/149] https://docs.bakuun.com/5NcU-search-by-geo
+2026-06-20 16:46:37.253 | INFO     | app.core.loader:crawl_urls:429 - Crawled [92/149] https://docs.bakuun.com/yYGG-error-codes
+2026-06-20 16:46:37.253 | INFO     | app.core.loader:crawl_urls:429 - Crawled [93/149] https://docs.bakuun.com/X5w1-rate-plan-level-restrictions
+2026-06-20 16:46:37.255 | INFO     | app.core.loader:crawl_urls:429 - Crawled [94/149] https://docs.bakuun.com/close-departure-rate-plan
+2026-06-20 16:46:37.255 | INFO     | app.core.loader:crawl_urls:429 - Crawled [95/149] https://docs.bakuun.com/fwGL-pre-booking
+2026-06-20 16:46:37.255 | INFO     | app.core.loader:crawl_urls:429 - Crawled [96/149] https://docs.bakuun.com/minimum-advance-booking-offset-room-level
+2026-06-20 16:46:37.255 | INFO     | app.core.loader:crawl_urls:429 - Crawled [97/149] https://docs.bakuun.com/new
+2026-06-20 16:46:37.260 | INFO     | app.core.loader:crawl_urls:429 - Crawled [98/149] https://docs.bakuun.com/search-by-country
+2026-06-20 16:46:37.260 | INFO     | app.core.loader:crawl_urls:429 - Crawled [99/149] https://docs.bakuun.com/rates
+2026-06-20 16:46:37.260 | INFO     | app.core.loader:crawl_urls:429 - Crawled [100/149] https://docs.bakuun.com/modify
+2026-06-20 16:46:37.260 | INFO     | app.core.loader:crawl_urls:429 - Crawled [101/149] https://docs.bakuun.com/single-booking
+2026-06-20 16:46:37.264 | INFO     | app.core.loader:crawl_urls:429 - Crawled [102/149] https://docs.bakuun.com/close-arrival-room-level
+2026-06-20 16:46:37.264 | INFO     | app.core.loader:crawl_urls:429 - Crawled [103/149] https://docs.bakuun.com/ari
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [104/149] https://docs.bakuun.com/max-stay-arrival-rate-plan-level
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [105/149] https://docs.bakuun.com/stop-sell-room-level
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [106/149] https://docs.bakuun.com/0D7o-sell-threshold
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [107/149] https://docs.bakuun.com/booking
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [108/149] https://docs.bakuun.com/account-migration
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [109/149] https://docs.bakuun.com/channelsgate-marketplace-account-migration-steps
+2026-06-20 16:46:37.266 | INFO     | app.core.loader:crawl_urls:429 - Crawled [110/149] https://docs.bakuun.com/VRZB-los-rates
+2026-06-20 16:46:37.271 | INFO     | app.core.loader:crawl_urls:429 - Crawled [111/149] https://docs.bakuun.com/_HmK-modify
+2026-06-20 16:46:37.271 | INFO     | app.core.loader:crawl_urls:429 - Crawled [112/149] https://docs.bakuun.com/LG-V-read-booking
+2026-06-20 16:46:37.271 | INFO     | app.core.loader:crawl_urls:429 - Crawled [113/149] https://docs.bakuun.com/GeYK-availability-room-level
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [114/149] https://docs.bakuun.com/NJB--push-property
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [115/149] https://docs.bakuun.com/fIRF-hurdles-rates
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [116/149] https://docs.bakuun.com/error-codes
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [117/149] https://docs.bakuun.com/get-property
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [118/149] https://docs.bakuun.com/close-arrival-rate-plan
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [119/149] https://docs.bakuun.com/rate-plan-level-restrictions
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [120/149] https://docs.bakuun.com/multi-booking
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [121/149] https://docs.bakuun.com/create
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [122/149] https://docs.bakuun.com/read-booking
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [123/149] https://docs.bakuun.com/M_WW-occupancy-based-rates
+2026-06-20 16:46:37.274 | INFO     | app.core.loader:crawl_urls:429 - Crawled [124/149] https://docs.bakuun.com/i8rk-booking
+2026-06-20 16:46:37.284 | INFO     | app.core.loader:crawl_urls:429 - Crawled [125/149] https://docs.bakuun.com/xh8u-multi-booking
+2026-06-20 16:46:37.284 | INFO     | app.core.loader:crawl_urls:429 - Crawled [126/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan
+2026-06-20 16:46:37.284 | INFO     | app.core.loader:crawl_urls:429 - Crawled [127/149] https://docs.bakuun.com/oNUl-occupancy-based-rates
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [128/149] https://docs.bakuun.com/direct-supplier-push
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [129/149] https://docs.bakuun.com/kEcQ-read-property
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [130/149] https://docs.bakuun.com/4eXH-mapping
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [131/149] https://docs.bakuun.com/EFIT-single-booking
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [132/149] https://docs.bakuun.com/room-level-restrictions
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [133/149] https://docs.bakuun.com/los-rates
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [134/149] https://docs.bakuun.com/error-code
+2026-06-20 16:46:37.287 | INFO     | app.core.loader:crawl_urls:429 - Crawled [135/149] https://docs.bakuun.com/xNI4-minimum-stay-rate-plan-level
+2026-06-20 16:46:37.295 | INFO     | app.core.loader:crawl_urls:429 - Crawled [136/149] https://docs.bakuun.com/t8wS-max-advance-booking-offset-rate-plan
+2026-06-20 16:46:37.295 | INFO     | app.core.loader:crawl_urls:429 - Crawled [137/149] https://docs.bakuun.com/stop-sell-rate-plan
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [138/149] https://docs.bakuun.com/4gTP-modify
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [139/149] https://docs.bakuun.com/close-departure-room-level
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [140/149] https://docs.bakuun.com/PktI-cancellation-and-deposit
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [141/149] https://docs.bakuun.com/r_Uv-max-stay-rate-plan-level
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [142/149] https://docs.bakuun.com/cancel
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [143/149] https://docs.bakuun.com/ygpB-close-departure-rate-plan
+2026-06-20 16:46:37.297 | INFO     | app.core.loader:crawl_urls:429 - Crawled [144/149] https://docs.bakuun.com/rates-update
+2026-06-20 16:46:37.303 | INFO     | app.core.loader:crawl_urls:429 - Crawled [145/149] https://docs.bakuun.com/minimum-stay-arrival-rate-plan-level
+2026-06-20 16:46:37.303 | INFO     | app.core.loader:crawl_urls:429 - Crawled [146/149] https://docs.bakuun.com/pt1h-cancel
+2026-06-20 16:46:37.303 | INFO     | app.core.loader:crawl_urls:429 - Crawled [147/149] https://docs.bakuun.com/SHcm-hurdles-rates
+2026-06-20 16:46:37.305 | INFO     | app.core.loader:crawl_urls:429 - Crawled [148/149] https://docs.bakuun.com/VWIX-create
+2026-06-20 16:46:37.305 | INFO     | app.core.loader:crawl_urls:429 - Crawled [149/149] https://docs.bakuun.com/ratedock-account-migration-steps
+2026-06-20 16:46:37.307 | INFO     | app.core.loader:crawl_urls:431 - Sitemap crawl complete: 149 pages from 149 URLs
+2026-06-20 16:46:39.044 | INFO     | app.core.splitter:chunk_pages:280 - Produced 254 chunks from 149 pages
+2026-06-20 16:46:39.058 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 254 total -> 250 new, 4 skipped (already indexed/duplicate)
+2026-06-20 16:46:39.068 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 250 texts in 2 batch(es) (backend=cohere model=voyage-multimodal-3.5 dim=2048)
+2026-06-20 16:47:01.944 | ERROR    | app.services.ingest_service:ingest_url:127 - Ingestion failed for https://docs.bakuun.com/
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "D:\Work\Personal\RAG\venv\Scripts\uvicorn.exe\__main__.py", line 7, in <module>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function Command.main at 0x000001E7E201BB00>
+           └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001E7DFB59AF0>
+         │    └ <function Command.invoke at 0x000001E7E201B7E0>
+         └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │   │      │    │           └ <click.core.Context object at 0x000001E7DFB59AF0>
+           │   │      │    └ <function main at 0x000001E7E227A840>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x000001E7E201AA20>
+           └ <click.core.Context object at 0x000001E7DFB59AF0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           │         │       └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │         └ ()
+           └ <function main at 0x000001E7E227A840>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+    └ <function run at 0x000001E7E2071440>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+    │      └ <function Server.run at 0x000001E7E20D62A0>
+    └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001E7E204E840>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001E7E226E720>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+           │           │    │             └ None
+           │           │    └ <function Server.serve at 0x000001E7E20D6340>
+           │           └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+           └ <function run at 0x000001E7DF800680>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001E78A365460>
+           │      └ <function Runner.run at 0x000001E7E1963740>
+           └ <asyncio.runners.Runner object at 0x000001E789FF71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py:79>...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001E7E19613A0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001E789FF71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001E7E1A1CF40>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001E7E1963100>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001E7E18AD440>
+    └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E78A382930>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78A...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001E78A344AA0>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E78A382930>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78A...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78A...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E78A401400>
+          └ <fastapi.applications.FastAPI object at 0x000001E78A344AA0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001E78A549760>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E78A3A4680>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E78A401400>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001E78A549760>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001E78A55A2D0>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E78A3A4680>
+          └ <function wrap_app_handling_exceptions at 0x000001E7E3066200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x000001E78A3821E0>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001E78A3821E0>>
+          └ <fastapi.routing.APIRouter object at 0x000001E78A3821E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function _IncludedRouter.handle at 0x000001E7E309BD80>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+          │    │               │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │    │               │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │               │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    │               └ <function APIRouter.handle at 0x000001E7E30B8900>
+          │    └ <fastapi.routing.APIRouter object at 0x000001E7E245CF50>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+          │               │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │               │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │               │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │               └ <function _IncludedRouter._handle_selected at 0x000001E7E309BE20>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+          │              │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │              │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │              │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │              └ <function APIRoute.handle at 0x000001E7E309A020>
+          └ APIRoute(path='/ingest', name='submit_ingest', methods=['POST'])
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app at 0x000001E78A549940>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A5498A0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001E78A55A780>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001E78A549A80>
+          └ <function wrap_app_handling_exceptions at 0x000001E7E3066200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78A549BC0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001E78A549A80>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001E78A55A780>
+                     └ <function get_request_handler.<locals>.app at 0x000001E78A5499E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 683, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001E7E3099620>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 337, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'req': IngestRequest(url=HttpUrl('https://docs.bakuun.com/'), max_depth=None, max_pages=None, from_sitemap=True)}
+                 │         └ <function submit_ingest at 0x000001E789B6BA60>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\api\routes\ingest.py", line 20, in submit_ingest
+    return await ingest_url(
+                 └ <function ingest_url at 0x000001E7E31A5C60>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 153, in ingest_url
+    return await service.ingest_url(
+                 │       └ <function IngestionService.ingest_url at 0x000001E789B6B920>
+                 └ <app.services.ingest_service.IngestionService object at 0x000001E78A55ADB0>
+
+> File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 107, in ingest_url
+    vectors = await self.embedder.embed_texts([c.text for c in new_chunks])
+                    │    │        │                            └ [Chunk(text='## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs...
+                    │    │        └ <function BaseEmbedder.embed_texts at 0x000001E7E32C9440>
+                    │    └ <app.core.embeddings.CohereEmbedder object at 0x000001E78A09C530>
+                    └ <app.services.ingest_service.IngestionService object at 0x000001E78A55ADB0>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 98, in embed_texts
+    results = await asyncio.gather(*(run(i, b) for i, b in enumerate(batches)))
+                    │       │        │                               └ [['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJ...
+                    │       │        └ <function BaseEmbedder.embed_texts.<locals>.run at 0x000001E78C9902C0>
+                    │       └ <function gather at 0x000001E7E195DE40>
+                    └ <module 'asyncio' from 'C:\\Users\\cepl\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\__init__.py'>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 94, in run
+    vectors = await self._embed_batch(batch, "document")
+                    │    │            └ ['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJR...
+                    │    └ <function BaseEmbedder._embed_batch at 0x000001E7E32C93A0>
+                    └ <app.core.embeddings.CohereEmbedder object at 0x000001E78A09C530>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 71, in _embed_batch
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x000001E78C22D310>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 170, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 2093975433536: attempt #6; slept for 17.58; last result: failed (NotFoundError headers: {'access-control-expo...
+               │    │                └ <AsyncRetrying object at 0x1e78bc276e0 (stop=<tenacity.stop.stop_after_attempt object at 0x000001E78E1DDF40>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000001E7E3215080>
+               └ <AsyncRetrying object at 0x1e78bc276e0 (stop=<tenacity.stop.stop_after_attempt object at 0x000001E78E1DDF40>, wait=<tenacity....
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 2093975433536: attempt #6; slept for 17.58; last result: failed (NotFoundError headers: {'access-control-expo...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x000001E78C2285E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 2093975433536: attempt #6; slept for 17.58; last result: failed (NotFoundError headers: {'access-control-exp...
+           └ <function BaseRetrying._post_stop_check_actions.<locals>.exc_check at 0x000001E78C18E840>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          │         └ <function RetryError.reraise at 0x000001E7E31FE480>
+          └ RetryError(<Future at 0x1e78c22f7a0 state=finished raised NotFoundError>)
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          │    │            └ <function Future.result at 0x000001E7DFED9EE0>
+          │    └ <Future at 0x1e78c22f7a0 state=finished raised NotFoundError>
+          └ RetryError(<Future at 0x1e78c22f7a0 state=finished raised NotFoundError>)
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 79, in _embed_batch
+    return await self._embed_raw(batch, input_type)
+                 │    │          │      └ 'document'
+                 │    │          └ ['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJR...
+                 │    └ <function CohereEmbedder._embed_raw at 0x000001E7E32C9A80>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x000001E78A09C530>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 206, in _embed_raw
+    resp = await self._client.embed(
+                 │    │       └ <function AsyncV2Client.embed at 0x000001E78A8136A0>
+                 │    └ <cohere.client_v2.AsyncClientV2 object at 0x000001E78A381D30>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x000001E78A09C530>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\client.py", line 1050, in embed
+    _response = await self._raw_client.embed(
+                      │    └ <cohere.client_v2._CombinedRawClient object at 0x000001E78AA20BF0>
+                      └ <cohere.client_v2.AsyncClientV2 object at 0x000001E78A381D30>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\raw_client.py", line 2025, in embed
+    raise NotFoundError(
+          └ <class 'cohere.errors.not_found_error.NotFoundError'>
+
+cohere.errors.not_found_error.NotFoundError: headers: {'access-control-expose-headers': 'X-Debug-Trace-ID', 'cache-control': 'no-cache, no-store, no-transform, must-revalidate, private, max-age=0', 'content-encoding': 'gzip', 'content-type': 'application/json', 'expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'pragma': 'no-cache', 'vary': 'Origin,Accept-Encoding', 'x-accel-expires': '0', 'x-debug-trace-id': '1d73cd95ad4e78408c5c700f9eb89d47', 'x-endpoint-monthly-call-limit': '1000', 'x-trial-endpoint-call-limit': '100', 'x-trial-endpoint-call-remaining': '89', 'date': 'Sat, 20 Jun 2026 11:17:02 GMT', 'x-envoy-upstream-service-time': '8', 'server': 'envoy', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=2592000', 'transfer-encoding': 'chunked'}, status_code: 404, body: {'id': 'a8be2294-fdca-46d7-a7cd-086b27b8c892', 'message': "model 'voyage-multimodal-3.5' not found, make sure the correct model ID was used and that you have access to the model."}
+2026-06-20 17:06:20.862 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: cohere
+2026-06-20 17:06:21.176 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 17:06:21.262 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 17:06:21.948 | INFO     | app.core.loader:fetch_sitemap_urls:397 - Sitemap discovery: 149 URLs from https://docs.bakuun.com/sitemap.xml
+2026-06-20 17:06:28.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [1/2] https://docs.bakuun.com/go-live-process
+2026-06-20 17:06:28.182 | INFO     | app.core.loader:crawl_urls:429 - Crawled [2/2] https://docs.bakuun.com/modify-booking
+2026-06-20 17:06:28.182 | INFO     | app.core.loader:crawl_urls:431 - Sitemap crawl complete: 2 pages from 2 URLs
+2026-06-20 17:06:28.229 | INFO     | app.core.splitter:chunk_pages:280 - Produced 9 chunks from 2 pages
+2026-06-20 17:06:28.229 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 9 total -> 7 new, 2 skipped (already indexed/duplicate)
+2026-06-20 17:06:28.229 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 7 texts in 1 batch(es) (backend=cohere model=voyage-multimodal-3.5 dim=2048)
+2026-06-20 17:06:54.253 | ERROR    | app.services.ingest_service:ingest_url:127 - Ingestion failed for https://docs.bakuun.com/
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "D:\Work\Personal\RAG\venv\Scripts\uvicorn.exe\__main__.py", line 7, in <module>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function Command.main at 0x000001E7E201BB00>
+           └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x000001E7DFB59AF0>
+         │    └ <function Command.invoke at 0x000001E7E201B7E0>
+         └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │   │      │    │           └ <click.core.Context object at 0x000001E7DFB59AF0>
+           │   │      │    └ <function main at 0x000001E7E227A840>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x000001E7E201AA20>
+           └ <click.core.Context object at 0x000001E7DFB59AF0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           │         │       └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │         └ ()
+           └ <function main at 0x000001E7E227A840>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+    └ <function run at 0x000001E7E2071440>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+    │      └ <function Server.run at 0x000001E7E20D62A0>
+    └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x000001E7E204E840>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x000001E7E226E720>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+           │           │    │             └ None
+           │           │    └ <function Server.serve at 0x000001E7E20D6340>
+           │           └ <uvicorn.server.Server object at 0x000001E7E226FE90>
+           └ <function run at 0x000001E7DF800680>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x000001E78A365460>
+           │      └ <function Runner.run at 0x000001E7E1963740>
+           └ <asyncio.runners.Runner object at 0x000001E789FF71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py:79>...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x000001E7E19613A0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x000001E789FF71A0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001E7E1A1CF40>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001E7E1963100>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001E7E18AD440>
+    └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<_GatheringFu...tFoundError()>)>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E78A382930>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78C...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x000001E78A344AA0>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x000001E78A382930>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78C...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E78C...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E78A401400>
+          └ <fastapi.applications.FastAPI object at 0x000001E78A344AA0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001E78E06F9C0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E78A3A4680>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001E78A401400>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001E78E06F9C0>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001E78CDBEDE0>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001E78A3A4680>
+          └ <function wrap_app_handling_exceptions at 0x000001E7E3066200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x000001E78A3821E0>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x000001E78A3A4080>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001E78A3821E0>>
+          └ <fastapi.routing.APIRouter object at 0x000001E78A3821E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function _IncludedRouter.handle at 0x000001E7E309BD80>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+          │    │               │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │    │               │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │    │               │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    │               └ <function APIRouter.handle at 0x000001E7E30B8900>
+          │    └ <fastapi.routing.APIRouter object at 0x000001E7E245CF50>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+          │               │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │               │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │               │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │               └ <function _IncludedRouter._handle_selected at 0x000001E7E309BE20>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x000001E7E245CF50>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+          │              │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │              │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │              │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │              └ <function APIRoute.handle at 0x000001E7E309A020>
+          └ APIRoute(path='/ingest', name='submit_ingest', methods=['POST'])
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app at 0x000001E78E06FB00>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06FBA0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x000001E78CDBF5C0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001E78E06F600>
+          └ <function wrap_app_handling_exceptions at 0x000001E7E3066200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001E78E06F880>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x000001E...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001E78E06F600>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x000001E78CDBF5C0>
+                     └ <function get_request_handler.<locals>.app at 0x000001E78E06F560>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 683, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001E7E3099620>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 337, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'req': IngestRequest(url=HttpUrl('https://docs.bakuun.com/'), max_depth=None, max_pages=2, from_sitemap=True)}
+                 │         └ <function submit_ingest at 0x000001E789B6BA60>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\api\routes\ingest.py", line 20, in submit_ingest
+    return await ingest_url(
+                 └ <function ingest_url at 0x000001E7E31A5C60>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 153, in ingest_url
+    return await service.ingest_url(
+                 │       └ <function IngestionService.ingest_url at 0x000001E789B6B920>
+                 └ <app.services.ingest_service.IngestionService object at 0x000001E78CDBE750>
+
+> File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 107, in ingest_url
+    vectors = await self.embedder.embed_texts([c.text for c in new_chunks])
+                    │    │        │                            └ [Chunk(text='## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs...
+                    │    │        └ <function BaseEmbedder.embed_texts at 0x000001E7E32C9440>
+                    │    └ <app.core.embeddings.CohereEmbedder object at 0x000001E78CDBF500>
+                    └ <app.services.ingest_service.IngestionService object at 0x000001E78CDBE750>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 98, in embed_texts
+    results = await asyncio.gather(*(run(i, b) for i, b in enumerate(batches)))
+                    │       │        │                               └ [['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJ...
+                    │       │        └ <function BaseEmbedder.embed_texts.<locals>.run at 0x000001E78A549B20>
+                    │       └ <function gather at 0x000001E7E195DE40>
+                    └ <module 'asyncio' from 'C:\\Users\\cepl\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\__init__.py'>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 94, in run
+    vectors = await self._embed_batch(batch, "document")
+                    │    │            └ ['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJR...
+                    │    └ <function BaseEmbedder._embed_batch at 0x000001E7E32C93A0>
+                    └ <app.core.embeddings.CohereEmbedder object at 0x000001E78CDBF500>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 71, in _embed_batch
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x000001E78E0EE2D0>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 170, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 2094012981200: attempt #6; slept for 23.37; last result: failed (NotFoundError headers: {'access-control-expo...
+               │    │                └ <AsyncRetrying object at 0x1e78c3f5970 (stop=<tenacity.stop.stop_after_attempt object at 0x000001E78CC317C0>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x000001E7E3215080>
+               └ <AsyncRetrying object at 0x1e78c3f5970 (stop=<tenacity.stop.stop_after_attempt object at 0x000001E78CC317C0>, wait=<tenacity....
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 2094012981200: attempt #6; slept for 23.37; last result: failed (NotFoundError headers: {'access-control-expo...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x000001E78E4E28E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 2094012981200: attempt #6; slept for 23.37; last result: failed (NotFoundError headers: {'access-control-exp...
+           └ <function BaseRetrying._post_stop_check_actions.<locals>.exc_check at 0x000001E78E4E2700>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          │         └ <function RetryError.reraise at 0x000001E7E31FE480>
+          └ RetryError(<Future at 0x1e78e55d040 state=finished raised NotFoundError>)
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          │    │            └ <function Future.result at 0x000001E7DFED9EE0>
+          │    └ <Future at 0x1e78e55d040 state=finished raised NotFoundError>
+          └ RetryError(<Future at 0x1e78e55d040 state=finished raised NotFoundError>)
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 79, in _embed_batch
+    return await self._embed_raw(batch, input_type)
+                 │    │          │      └ 'document'
+                 │    │          └ ['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJR...
+                 │    └ <function CohereEmbedder._embed_raw at 0x000001E7E32C9A80>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x000001E78CDBF500>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 206, in _embed_raw
+    resp = await self._client.embed(
+                 │    │       └ <function AsyncV2Client.embed at 0x000001E78A8136A0>
+                 │    └ <cohere.client_v2.AsyncClientV2 object at 0x000001E78CDBC2C0>
+                 └ <app.core.embeddings.CohereEmbedder object at 0x000001E78CDBF500>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\client.py", line 1050, in embed
+    _response = await self._raw_client.embed(
+                      │    └ <cohere.client_v2._CombinedRawClient object at 0x000001E78CAFC350>
+                      └ <cohere.client_v2.AsyncClientV2 object at 0x000001E78CDBC2C0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\cohere\v2\raw_client.py", line 2025, in embed
+    raise NotFoundError(
+          └ <class 'cohere.errors.not_found_error.NotFoundError'>
+
+cohere.errors.not_found_error.NotFoundError: headers: {'access-control-expose-headers': 'X-Debug-Trace-ID', 'cache-control': 'no-cache, no-store, no-transform, must-revalidate, private, max-age=0', 'content-encoding': 'gzip', 'content-type': 'application/json', 'expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'pragma': 'no-cache', 'vary': 'Origin,Accept-Encoding', 'x-accel-expires': '0', 'x-debug-trace-id': '4bfeed04ba2085591b60fbeaf77614af', 'x-endpoint-monthly-call-limit': '1000', 'x-trial-endpoint-call-limit': '100', 'x-trial-endpoint-call-remaining': '94', 'date': 'Sat, 20 Jun 2026 11:36:54 GMT', 'x-envoy-upstream-service-time': '8', 'server': 'envoy', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=2592000', 'transfer-encoding': 'chunked'}, status_code: 404, body: {'id': '13b13e79-aafd-4d55-9c75-afcbc323d53b', 'message': "model 'voyage-multimodal-3.5' not found, make sure the correct model ID was used and that you have access to the model."}
+2026-06-20 17:09:53.476 | INFO     | app.main:_startup:27 - Started rag-url-ingestion (pgvector backend)
+2026-06-20 17:10:09.353 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 17:10:09.822 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 17:10:10.098 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 17:10:12.692 | INFO     | app.core.loader:fetch_sitemap_urls:397 - Sitemap discovery: 149 URLs from https://docs.bakuun.com/sitemap.xml
+2026-06-20 17:10:23.201 | INFO     | app.core.loader:crawl_urls:429 - Crawled [1/2] https://docs.bakuun.com/go-live-process
+2026-06-20 17:10:23.201 | INFO     | app.core.loader:crawl_urls:429 - Crawled [2/2] https://docs.bakuun.com/modify-booking
+2026-06-20 17:10:23.205 | INFO     | app.core.loader:crawl_urls:431 - Sitemap crawl complete: 2 pages from 2 URLs
+2026-06-20 17:10:23.326 | INFO     | app.core.splitter:chunk_pages:280 - Produced 9 chunks from 2 pages
+2026-06-20 17:10:23.341 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 9 total -> 7 new, 2 skipped (already indexed/duplicate)
+2026-06-20 17:10:23.353 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 7 texts in 1 batch(es) (backend=voyage model=voyage-3-large dim=2048)
+2026-06-20 17:10:24.687 | INFO     | app.core.vectorstore:upsert:150 - pgvector upserted 7 records
+2026-06-20 17:10:24.708 | SUCCESS  | app.services.ingest_service:ingest_url:120 - Ingest complete https://docs.bakuun.com/: 2 pages, 7 new chunks upserted (skipped 2)
+2026-06-20 17:11:50.082 | INFO     | app.core.embeddings:get_embedder:266 - Using embedding backend: voyage
+2026-06-20 17:11:50.083 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 17:11:50.410 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)
+2026-06-20 17:11:52.702 | INFO     | app.core.loader:fetch_sitemap_urls:397 - Sitemap discovery: 149 URLs from https://docs.bakuun.com/sitemap.xml
+2026-06-20 17:18:42.669 | INFO     | app.core.loader:crawl_urls:429 - Crawled [1/149] https://docs.bakuun.com/go-live-process
+2026-06-20 17:18:42.669 | INFO     | app.core.loader:crawl_urls:429 - Crawled [2/149] https://docs.bakuun.com/modify-booking
+2026-06-20 17:18:42.674 | INFO     | app.core.loader:crawl_urls:429 - Crawled [3/149] https://docs.bakuun.com/availability-room-level
+2026-06-20 17:18:42.674 | INFO     | app.core.loader:crawl_urls:429 - Crawled [4/149] https://docs.bakuun.com/HMJE-push-property
+2026-06-20 17:18:42.675 | INFO     | app.core.loader:crawl_urls:429 - Crawled [5/149] https://docs.bakuun.com/room-base-rates
+2026-06-20 17:18:42.675 | INFO     | app.core.loader:crawl_urls:429 - Crawled [6/149] https://docs.bakuun.com
+2026-06-20 17:18:42.675 | INFO     | app.core.loader:crawl_urls:429 - Crawled [7/149] https://docs.bakuun.com/read-properties
+2026-06-20 17:18:42.675 | INFO     | app.core.loader:crawl_urls:429 - Crawled [8/149] https://docs.bakuun.com/faq
+2026-06-20 17:18:42.678 | INFO     | app.core.loader:crawl_urls:429 - Crawled [9/149] https://docs.bakuun.com/Q5ur-search-by-city
+2026-06-20 17:18:42.678 | INFO     | app.core.loader:crawl_urls:429 - Crawled [10/149] https://docs.bakuun.com/new-booking
+2026-06-20 17:18:42.678 | INFO     | app.core.loader:crawl_urls:429 - Crawled [11/149] https://docs.bakuun.com/search-results-mps-multi-property-shopping-occupancy-base
+2026-06-20 17:18:42.679 | INFO     | app.core.loader:crawl_urls:429 - Crawled [12/149] https://docs.bakuun.com/search-by-geo
+2026-06-20 17:18:42.679 | INFO     | app.core.loader:crawl_urls:429 - Crawled [13/149] https://docs.bakuun.com/A8OC-booking
+2026-06-20 17:18:42.679 | INFO     | app.core.loader:crawl_urls:429 - Crawled [14/149] https://docs.bakuun.com/single-booking-retrieval
+2026-06-20 17:18:42.682 | INFO     | app.core.loader:crawl_urls:429 - Crawled [15/149] https://docs.bakuun.com/bulk-bookings-retrieval
+2026-06-20 17:18:42.682 | INFO     | app.core.loader:crawl_urls:429 - Crawled [16/149] https://docs.bakuun.com/availability-rate-plan-level
+2026-06-20 17:18:42.683 | INFO     | app.core.loader:crawl_urls:429 - Crawled [17/149] https://docs.bakuun.com/iGJW-mapping
+2026-06-20 17:18:42.683 | INFO     | app.core.loader:crawl_urls:429 - Crawled [18/149] https://docs.bakuun.com/cRIu-get-property
+2026-06-20 17:18:42.685 | INFO     | app.core.loader:crawl_urls:429 - Crawled [19/149] https://docs.bakuun.com/TNio-search-by-id
+2026-06-20 17:18:42.685 | INFO     | app.core.loader:crawl_urls:429 - Crawled [20/149] https://docs.bakuun.com/multi-property-shopping-mps
+2026-06-20 17:18:42.685 | INFO     | app.core.loader:crawl_urls:429 - Crawled [21/149] https://docs.bakuun.com/search-by-id
+2026-06-20 17:18:42.687 | INFO     | app.core.loader:crawl_urls:429 - Crawled [22/149] https://docs.bakuun.com/pre-booking
+2026-06-20 17:18:42.687 | INFO     | app.core.loader:crawl_urls:429 - Crawled [23/149] https://docs.bakuun.com/buyer-api-pull
+2026-06-20 17:18:42.687 | INFO     | app.core.loader:crawl_urls:429 - Crawled [24/149] https://docs.bakuun.com/push-property
+2026-06-20 17:18:42.690 | INFO     | app.core.loader:crawl_urls:429 - Crawled [25/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan-level
+2026-06-20 17:18:42.690 | INFO     | app.core.loader:crawl_urls:429 - Crawled [26/149] https://docs.bakuun.com/length-of-stay-rates-los
+2026-06-20 17:18:42.692 | INFO     | app.core.loader:crawl_urls:429 - Crawled [27/149] https://docs.bakuun.com/length-of-stay-rates-los-occupancy-based
+2026-06-20 17:18:42.692 | INFO     | app.core.loader:crawl_urls:429 - Crawled [28/149] https://docs.bakuun.com/stop-sales-restriction-rate-plan-level
+2026-06-20 17:18:42.694 | INFO     | app.core.loader:crawl_urls:429 - Crawled [29/149] https://docs.bakuun.com/minimum-length-of-stay-rate-plan-level
+2026-06-20 17:18:42.694 | INFO     | app.core.loader:crawl_urls:429 - Crawled [30/149] https://docs.bakuun.com/Xt-i-booking
+2026-06-20 17:18:42.694 | INFO     | app.core.loader:crawl_urls:429 - Crawled [31/149] https://docs.bakuun.com/hurdles-rates
+2026-06-20 17:18:42.696 | INFO     | app.core.loader:crawl_urls:429 - Crawled [32/149] https://docs.bakuun.com/acknowledgement
+2026-06-20 17:18:42.696 | INFO     | app.core.loader:crawl_urls:429 - Crawled [33/149] https://docs.bakuun.com/occupancy-based-rates-extra-adults
+2026-06-20 17:18:42.698 | INFO     | app.core.loader:crawl_urls:429 - Crawled [34/149] https://docs.bakuun.com/closed-arrival-restriction-room-level
+2026-06-20 17:18:42.700 | INFO     | app.core.loader:crawl_urls:429 - Crawled [35/149] https://docs.bakuun.com/room-level
+2026-06-20 17:18:42.700 | INFO     | app.core.loader:crawl_urls:429 - Crawled [36/149] https://docs.bakuun.com/rate-plan-level
+2026-06-20 17:18:42.700 | INFO     | app.core.loader:crawl_urls:429 - Crawled [37/149] https://docs.bakuun.com/DA7T-cancel
+2026-06-20 17:18:42.700 | INFO     | app.core.loader:crawl_urls:429 - Crawled [38/149] https://docs.bakuun.com/get-listing
+2026-06-20 17:18:42.702 | INFO     | app.core.loader:crawl_urls:429 - Crawled [39/149] https://docs.bakuun.com/mapping
+2026-06-20 17:18:42.702 | INFO     | app.core.loader:crawl_urls:429 - Crawled [40/149] https://docs.bakuun.com/max-length-of-stay-arrival-at-rate-plan-level
+2026-06-20 17:18:42.702 | INFO     | app.core.loader:crawl_urls:429 - Crawled [41/149] https://docs.bakuun.com/nawh-get-property
+2026-06-20 17:18:42.705 | INFO     | app.core.loader:crawl_urls:429 - Crawled [42/149] https://docs.bakuun.com/Cuuj-ari
+2026-06-20 17:18:42.706 | INFO     | app.core.loader:crawl_urls:429 - Crawled [43/149] https://docs.bakuun.com/dAqe-cancellation-and-deposit
+2026-06-20 17:18:42.706 | INFO     | app.core.loader:crawl_urls:429 - Crawled [44/149] https://docs.bakuun.com/HkA8-rates-update
+2026-06-20 17:18:42.708 | INFO     | app.core.loader:crawl_urls:429 - Crawled [45/149] https://docs.bakuun.com/buyer-api-push
+2026-06-20 17:18:42.708 | INFO     | app.core.loader:crawl_urls:429 - Crawled [46/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-room-level
+2026-06-20 17:18:42.708 | INFO     | app.core.loader:crawl_urls:429 - Crawled [47/149] https://docs.bakuun.com/minimum-length-of-stay-arrival-at-rate-plan-level-cloned
+2026-06-20 17:18:42.710 | INFO     | app.core.loader:crawl_urls:429 - Crawled [48/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan-level
+2026-06-20 17:18:42.710 | INFO     | app.core.loader:crawl_urls:429 - Crawled [49/149] https://docs.bakuun.com/fetch-rate-plan-details
+2026-06-20 17:18:42.713 | INFO     | app.core.loader:crawl_urls:429 - Crawled [50/149] https://docs.bakuun.com/search-results-sps-single-property-shopping
+2026-06-20 17:18:42.714 | INFO     | app.core.loader:crawl_urls:429 - Crawled [51/149] https://docs.bakuun.com/AN3N-search-by-id
+2026-06-20 17:18:42.715 | INFO     | app.core.loader:crawl_urls:429 - Crawled [52/149] https://docs.bakuun.com/cancel-booking
+2026-06-20 17:18:42.715 | INFO     | app.core.loader:crawl_urls:429 - Crawled [53/149] https://docs.bakuun.com/single-property-shopping-sps
+2026-06-20 17:18:42.716 | INFO     | app.core.loader:crawl_urls:429 - Crawled [54/149] https://docs.bakuun.com/occupancy-base-rates
+2026-06-20 17:18:42.716 | INFO     | app.core.loader:crawl_urls:429 - Crawled [55/149] https://docs.bakuun.com/search-by-city
+2026-06-20 17:18:42.716 | INFO     | app.core.loader:crawl_urls:429 - Crawled [56/149] https://docs.bakuun.com/multi-property-shopping-mps-room-base-rates
+2026-06-20 17:18:42.719 | INFO     | app.core.loader:crawl_urls:429 - Crawled [57/149] https://docs.bakuun.com/search-results-sps-single-property-shopping-occupancy-base
+2026-06-20 17:18:42.720 | INFO     | app.core.loader:crawl_urls:429 - Crawled [58/149] https://docs.bakuun.com/C5zx-occupancy-base-rates
+2026-06-20 17:18:42.721 | INFO     | app.core.loader:crawl_urls:429 - Crawled [59/149] https://docs.bakuun.com/6ne6-search-by-country
+2026-06-20 17:18:42.721 | INFO     | app.core.loader:crawl_urls:429 - Crawled [60/149] https://docs.bakuun.com/stop-sell-rate-plan-level
+2026-06-20 17:18:42.723 | INFO     | app.core.loader:crawl_urls:429 - Crawled [61/149] https://docs.bakuun.com/max-stay-rate-plan-level
+2026-06-20 17:18:42.723 | INFO     | app.core.loader:crawl_urls:429 - Crawled [62/149] https://docs.bakuun.com/min-advance-booking-offset-rate-plan
+2026-06-20 17:18:42.723 | INFO     | app.core.loader:crawl_urls:429 - Crawled [63/149] https://docs.bakuun.com/max-advance-booking-offset-rate-plan
+2026-06-20 17:18:42.725 | INFO     | app.core.loader:crawl_urls:429 - Crawled [64/149] https://docs.bakuun.com/fVK3-close-arrival-rate-plan
+2026-06-20 17:18:42.725 | INFO     | app.core.loader:crawl_urls:429 - Crawled [65/149] https://docs.bakuun.com/Wbt4-ari
+2026-06-20 17:18:42.725 | INFO     | app.core.loader:crawl_urls:429 - Crawled [66/149] https://docs.bakuun.com/third-party-supplier-push
+2026-06-20 17:18:42.727 | INFO     | app.core.loader:crawl_urls:429 - Crawled [67/149] https://docs.bakuun.com/27ot-minimum-stay-arrival-rate-plan-level
+2026-06-20 17:18:42.728 | INFO     | app.core.loader:crawl_urls:429 - Crawled [68/149] https://docs.bakuun.com/LUKC-max-stay-arrival-rate-plan-level
+2026-06-20 17:18:42.728 | INFO     | app.core.loader:crawl_urls:429 - Crawled [69/149] https://docs.bakuun.com/stop-sales-restriction-room-level
+2026-06-20 17:18:42.730 | INFO     | app.core.loader:crawl_urls:429 - Crawled [70/149] https://docs.bakuun.com/occupancy-based-rates
+2026-06-20 17:18:42.731 | INFO     | app.core.loader:crawl_urls:429 - Crawled [71/149] https://docs.bakuun.com/minimum-length-of-stay-room-level
+2026-06-20 17:18:42.731 | INFO     | app.core.loader:crawl_urls:429 - Crawled [72/149] https://docs.bakuun.com/max-length-of-stay-room-leve
+2026-06-20 17:18:42.733 | INFO     | app.core.loader:crawl_urls:429 - Crawled [73/149] https://docs.bakuun.com/basic-rates
+2026-06-20 17:18:42.733 | INFO     | app.core.loader:crawl_urls:429 - Crawled [74/149] https://docs.bakuun.com/J4mW-read-booking
+2026-06-20 17:18:42.733 | INFO     | app.core.loader:crawl_urls:429 - Crawled [75/149] https://docs.bakuun.com/closed-departure-restriction-rate-plan-level
+2026-06-20 17:18:42.735 | INFO     | app.core.loader:crawl_urls:429 - Crawled [76/149] https://docs.bakuun.com/D_UU-acknowledgement
+2026-06-20 17:18:42.735 | INFO     | app.core.loader:crawl_urls:429 - Crawled [77/149] https://docs.bakuun.com/read-property
+2026-06-20 17:18:42.735 | INFO     | app.core.loader:crawl_urls:429 - Crawled [78/149] https://docs.bakuun.com/minimum-stay-rate-plan-level
+2026-06-20 17:18:42.737 | INFO     | app.core.loader:crawl_urls:429 - Crawled [79/149] https://docs.bakuun.com/cancellation-and-deposit
+2026-06-20 17:18:42.737 | INFO     | app.core.loader:crawl_urls:429 - Crawled [80/149] https://docs.bakuun.com/4L6j-search-by-id
+2026-06-20 17:18:42.739 | INFO     | app.core.loader:crawl_urls:429 - Crawled [81/149] https://docs.bakuun.com/release-rate-plan-level
+2026-06-20 17:18:42.739 | INFO     | app.core.loader:crawl_urls:429 - Crawled [82/149] https://docs.bakuun.com/fetch-room-details
+2026-06-20 17:18:42.741 | INFO     | app.core.loader:crawl_urls:429 - Crawled [83/149] https://docs.bakuun.com/sell-threshold
+2026-06-20 17:18:42.741 | INFO     | app.core.loader:crawl_urls:429 - Crawled [84/149] https://docs.bakuun.com/max-length-of-stay-rate-plan-level
+2026-06-20 17:18:42.741 | INFO     | app.core.loader:crawl_urls:429 - Crawled [85/149] https://docs.bakuun.com/o6o_-error-code
+2026-06-20 17:18:42.743 | INFO     | app.core.loader:crawl_urls:429 - Crawled [86/149] https://docs.bakuun.com/max-advance-booking-offset-room-level
+2026-06-20 17:18:42.743 | INFO     | app.core.loader:crawl_urls:429 - Crawled [87/149] https://docs.bakuun.com/closed-arrival-restriction-rate-plan-level
+2026-06-20 17:18:42.743 | INFO     | app.core.loader:crawl_urls:429 - Crawled [88/149] https://docs.bakuun.com/max-length-of-stay-arrival-room-level
+2026-06-20 17:18:42.743 | INFO     | app.core.loader:crawl_urls:429 - Crawled [89/149] https://docs.bakuun.com/room-based-rates
+2026-06-20 17:18:42.746 | INFO     | app.core.loader:crawl_urls:429 - Crawled [90/149] https://docs.bakuun.com/closed-departure-restriction-room-level
+2026-06-20 17:18:42.746 | INFO     | app.core.loader:crawl_urls:429 - Crawled [91/149] https://docs.bakuun.com/5NcU-search-by-geo
+2026-06-20 17:18:42.746 | INFO     | app.core.loader:crawl_urls:429 - Crawled [92/149] https://docs.bakuun.com/yYGG-error-codes
+2026-06-20 17:18:42.748 | INFO     | app.core.loader:crawl_urls:429 - Crawled [93/149] https://docs.bakuun.com/X5w1-rate-plan-level-restrictions
+2026-06-20 17:18:42.748 | INFO     | app.core.loader:crawl_urls:429 - Crawled [94/149] https://docs.bakuun.com/close-departure-rate-plan
+2026-06-20 17:18:42.750 | INFO     | app.core.loader:crawl_urls:429 - Crawled [95/149] https://docs.bakuun.com/fwGL-pre-booking
+2026-06-20 17:18:42.750 | INFO     | app.core.loader:crawl_urls:429 - Crawled [96/149] https://docs.bakuun.com/minimum-advance-booking-offset-room-level
+2026-06-20 17:18:42.752 | INFO     | app.core.loader:crawl_urls:429 - Crawled [97/149] https://docs.bakuun.com/new
+2026-06-20 17:18:42.752 | INFO     | app.core.loader:crawl_urls:429 - Crawled [98/149] https://docs.bakuun.com/search-by-country
+2026-06-20 17:18:42.753 | INFO     | app.core.loader:crawl_urls:429 - Crawled [99/149] https://docs.bakuun.com/rates
+2026-06-20 17:18:42.754 | INFO     | app.core.loader:crawl_urls:429 - Crawled [100/149] https://docs.bakuun.com/modify
+2026-06-20 17:18:42.754 | INFO     | app.core.loader:crawl_urls:429 - Crawled [101/149] https://docs.bakuun.com/single-booking
+2026-06-20 17:18:42.755 | INFO     | app.core.loader:crawl_urls:429 - Crawled [102/149] https://docs.bakuun.com/close-arrival-room-level
+2026-06-20 17:18:42.755 | INFO     | app.core.loader:crawl_urls:429 - Crawled [103/149] https://docs.bakuun.com/ari
+2026-06-20 17:18:42.757 | INFO     | app.core.loader:crawl_urls:429 - Crawled [104/149] https://docs.bakuun.com/max-stay-arrival-rate-plan-level
+2026-06-20 17:18:42.757 | INFO     | app.core.loader:crawl_urls:429 - Crawled [105/149] https://docs.bakuun.com/stop-sell-room-level
+2026-06-20 17:18:42.759 | INFO     | app.core.loader:crawl_urls:429 - Crawled [106/149] https://docs.bakuun.com/0D7o-sell-threshold
+2026-06-20 17:18:42.760 | INFO     | app.core.loader:crawl_urls:429 - Crawled [107/149] https://docs.bakuun.com/booking
+2026-06-20 17:18:42.760 | INFO     | app.core.loader:crawl_urls:429 - Crawled [108/149] https://docs.bakuun.com/account-migration
+2026-06-20 17:18:42.762 | INFO     | app.core.loader:crawl_urls:429 - Crawled [109/149] https://docs.bakuun.com/channelsgate-marketplace-account-migration-steps
+2026-06-20 17:18:42.762 | INFO     | app.core.loader:crawl_urls:429 - Crawled [110/149] https://docs.bakuun.com/VRZB-los-rates
+2026-06-20 17:18:42.764 | INFO     | app.core.loader:crawl_urls:429 - Crawled [111/149] https://docs.bakuun.com/_HmK-modify
+2026-06-20 17:18:42.764 | INFO     | app.core.loader:crawl_urls:429 - Crawled [112/149] https://docs.bakuun.com/LG-V-read-booking
+2026-06-20 17:18:42.766 | INFO     | app.core.loader:crawl_urls:429 - Crawled [113/149] https://docs.bakuun.com/GeYK-availability-room-level
+2026-06-20 17:18:42.766 | INFO     | app.core.loader:crawl_urls:429 - Crawled [114/149] https://docs.bakuun.com/NJB--push-property
+2026-06-20 17:18:42.768 | INFO     | app.core.loader:crawl_urls:429 - Crawled [115/149] https://docs.bakuun.com/fIRF-hurdles-rates
+2026-06-20 17:18:42.768 | INFO     | app.core.loader:crawl_urls:429 - Crawled [116/149] https://docs.bakuun.com/error-codes
+2026-06-20 17:18:42.768 | INFO     | app.core.loader:crawl_urls:429 - Crawled [117/149] https://docs.bakuun.com/get-property
+2026-06-20 17:18:42.770 | INFO     | app.core.loader:crawl_urls:429 - Crawled [118/149] https://docs.bakuun.com/close-arrival-rate-plan
+2026-06-20 17:18:42.770 | INFO     | app.core.loader:crawl_urls:429 - Crawled [119/149] https://docs.bakuun.com/rate-plan-level-restrictions
+2026-06-20 17:18:42.770 | INFO     | app.core.loader:crawl_urls:429 - Crawled [120/149] https://docs.bakuun.com/multi-booking
+2026-06-20 17:18:42.772 | INFO     | app.core.loader:crawl_urls:429 - Crawled [121/149] https://docs.bakuun.com/create
+2026-06-20 17:18:42.772 | INFO     | app.core.loader:crawl_urls:429 - Crawled [122/149] https://docs.bakuun.com/read-booking
+2026-06-20 17:18:42.774 | INFO     | app.core.loader:crawl_urls:429 - Crawled [123/149] https://docs.bakuun.com/M_WW-occupancy-based-rates
+2026-06-20 17:18:42.774 | INFO     | app.core.loader:crawl_urls:429 - Crawled [124/149] https://docs.bakuun.com/i8rk-booking
+2026-06-20 17:18:42.774 | INFO     | app.core.loader:crawl_urls:429 - Crawled [125/149] https://docs.bakuun.com/xh8u-multi-booking
+2026-06-20 17:18:42.777 | INFO     | app.core.loader:crawl_urls:429 - Crawled [126/149] https://docs.bakuun.com/minimum-advance-booking-offset-rate-plan
+2026-06-20 17:18:42.777 | INFO     | app.core.loader:crawl_urls:429 - Crawled [127/149] https://docs.bakuun.com/oNUl-occupancy-based-rates
+2026-06-20 17:18:42.777 | INFO     | app.core.loader:crawl_urls:429 - Crawled [128/149] https://docs.bakuun.com/direct-supplier-push
+2026-06-20 17:18:42.780 | INFO     | app.core.loader:crawl_urls:429 - Crawled [129/149] https://docs.bakuun.com/kEcQ-read-property
+2026-06-20 17:18:42.781 | INFO     | app.core.loader:crawl_urls:429 - Crawled [130/149] https://docs.bakuun.com/4eXH-mapping
+2026-06-20 17:18:42.781 | INFO     | app.core.loader:crawl_urls:429 - Crawled [131/149] https://docs.bakuun.com/EFIT-single-booking
+2026-06-20 17:18:42.783 | INFO     | app.core.loader:crawl_urls:429 - Crawled [132/149] https://docs.bakuun.com/room-level-restrictions
+2026-06-20 17:18:42.783 | INFO     | app.core.loader:crawl_urls:429 - Crawled [133/149] https://docs.bakuun.com/los-rates
+2026-06-20 17:18:42.783 | INFO     | app.core.loader:crawl_urls:429 - Crawled [134/149] https://docs.bakuun.com/error-code
+2026-06-20 17:18:42.785 | INFO     | app.core.loader:crawl_urls:429 - Crawled [135/149] https://docs.bakuun.com/xNI4-minimum-stay-rate-plan-level
+2026-06-20 17:18:42.785 | INFO     | app.core.loader:crawl_urls:429 - Crawled [136/149] https://docs.bakuun.com/t8wS-max-advance-booking-offset-rate-plan
+2026-06-20 17:18:42.785 | INFO     | app.core.loader:crawl_urls:429 - Crawled [137/149] https://docs.bakuun.com/stop-sell-rate-plan
+2026-06-20 17:18:42.787 | INFO     | app.core.loader:crawl_urls:429 - Crawled [138/149] https://docs.bakuun.com/4gTP-modify
+2026-06-20 17:18:42.787 | INFO     | app.core.loader:crawl_urls:429 - Crawled [139/149] https://docs.bakuun.com/close-departure-room-level
+2026-06-20 17:18:42.789 | INFO     | app.core.loader:crawl_urls:429 - Crawled [140/149] https://docs.bakuun.com/PktI-cancellation-and-deposit
+2026-06-20 17:18:42.789 | INFO     | app.core.loader:crawl_urls:429 - Crawled [141/149] https://docs.bakuun.com/r_Uv-max-stay-rate-plan-level
+2026-06-20 17:18:42.791 | INFO     | app.core.loader:crawl_urls:429 - Crawled [142/149] https://docs.bakuun.com/cancel
+2026-06-20 17:18:42.792 | INFO     | app.core.loader:crawl_urls:429 - Crawled [143/149] https://docs.bakuun.com/ygpB-close-departure-rate-plan
+2026-06-20 17:18:42.792 | INFO     | app.core.loader:crawl_urls:429 - Crawled [144/149] https://docs.bakuun.com/rates-update
+2026-06-20 17:18:42.793 | INFO     | app.core.loader:crawl_urls:429 - Crawled [145/149] https://docs.bakuun.com/minimum-stay-arrival-rate-plan-level
+2026-06-20 17:18:42.793 | INFO     | app.core.loader:crawl_urls:429 - Crawled [146/149] https://docs.bakuun.com/pt1h-cancel
+2026-06-20 17:18:42.793 | INFO     | app.core.loader:crawl_urls:429 - Crawled [147/149] https://docs.bakuun.com/SHcm-hurdles-rates
+2026-06-20 17:18:42.796 | INFO     | app.core.loader:crawl_urls:429 - Crawled [148/149] https://docs.bakuun.com/VWIX-create
+2026-06-20 17:18:42.797 | INFO     | app.core.loader:crawl_urls:429 - Crawled [149/149] https://docs.bakuun.com/ratedock-account-migration-steps
+2026-06-20 17:18:42.797 | INFO     | app.core.loader:crawl_urls:431 - Sitemap crawl complete: 149 pages from 149 URLs
+2026-06-20 17:18:44.177 | INFO     | app.core.splitter:chunk_pages:280 - Produced 254 chunks from 149 pages
+2026-06-20 17:18:44.190 | INFO     | app.db.metadata:filter_new_chunks:75 - Dedup: 254 total -> 254 new, 0 skipped (already indexed/duplicate)
+2026-06-20 17:18:44.200 | INFO     | app.core.embeddings:embed_texts:88 - Embedding 254 texts in 2 batch(es) (backend=voyage model=voyage-3-large dim=2048)
+2026-06-20 17:19:07.212 | ERROR    | app.services.ingest_service:ingest_url:127 - Ingestion failed for https://docs.bakuun.com/
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "D:\Work\Personal\RAG\venv\Scripts\uvicorn.exe\__main__.py", line 7, in <module>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1524, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function Command.main at 0x0000020C3050BB00>
+           └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1445, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x0000020C2E0B9AF0>
+         │    └ <function Command.invoke at 0x0000020C3050B7E0>
+         └ <Command main>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 1308, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │   │      │    │           └ <click.core.Context object at 0x0000020C2E0B9AF0>
+           │   │      │    └ <function main at 0x0000020C3076A840>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x0000020C3050AA20>
+           └ <click.core.Context object at 0x0000020C2E0B9AF0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\click\core.py", line 877, in invoke
+    return callback(*args, **kwargs)
+           │         │       └ {'app': 'app.main:app', 'host': '127.0.0.1', 'port': 8000, 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'relo...
+           │         └ ()
+           └ <function main at 0x0000020C3076A840>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 441, in main
+    run(
+    └ <function run at 0x0000020C30561440>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\main.py", line 620, in run
+    server.run()
+    │      └ <function Server.run at 0x0000020C305C62A0>
+    └ <uvicorn.server.Server object at 0x0000020C3075FE90>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py", line 75, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+           │           │    │             │                      │    │      └ <function Config.get_loop_factory at 0x0000020C3053E840>
+           │           │    │             │                      │    └ <uvicorn.config.Config object at 0x0000020C3075E720>
+           │           │    │             │                      └ <uvicorn.server.Server object at 0x0000020C3075FE90>
+           │           │    │             └ None
+           │           │    └ <function Server.serve at 0x0000020C305C6340>
+           │           └ <uvicorn.server.Server object at 0x0000020C3075FE90>
+           └ <function run at 0x0000020C2DD60680>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000020C58675460>
+           │      └ <function Runner.run at 0x0000020C2FE53740>
+           └ <asyncio.runners.Runner object at 0x0000020C57F826F0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\server.py:79>...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000020C2FE513A0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000020C57F826F0>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 678, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000020C2FF0CF40>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py", line 322, in run_forever
+    super().run_forever()
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 645, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000020C2FE53100>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 1999, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000020C2FD9D440>
+    └ <Handle Task.task_wakeup(<_GatheringFu...uest_id=None)>)>
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<_GatheringFu...uest_id=None)>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<_GatheringFu...uest_id=None)>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<_GatheringFu...uest_id=None)>)>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000020C585C32F0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020C58...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000020C58692060>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000020C585C32F0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\applications.py", line 1162, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020C58...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020C58...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000020C5851E0F0>
+          └ <fastapi.applications.FastAPI object at 0x0000020C58692060>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000020C58FCE660>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000020C5851E7E0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000020C5851E0F0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000020C58FCE660>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000020C58E53C20>
+          │                            │    └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000020C585FC980>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000020C5851E7E0>
+          └ <function wrap_app_handling_exceptions at 0x0000020C31556200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000020C585FC980>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <fastapi.routing.APIRouter object at 0x0000020C58692240>
+          └ <fastapi.middleware.asyncexitstack.AsyncExitStackMiddleware object at 0x0000020C585FC980>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000020C58692240>>
+          └ <fastapi.routing.APIRouter object at 0x0000020C58692240>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │     └ <function _IncludedRouter.handle at 0x0000020C3158BD80>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x0000020C313106E0>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1650, in handle
+    await self.original_router.handle(scope, receive, send)
+          │    │               │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │    │               │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │    │               │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │    │               └ <function APIRouter.handle at 0x0000020C31598900>
+          │    └ <fastapi.routing.APIRouter object at 0x0000020C313106E0>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x0000020C313106E0>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 2102, in handle
+    await included_router._handle_selected(scope, receive, send)
+          │               │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │               │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │               │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │               └ <function _IncludedRouter._handle_selected at 0x0000020C3158BE20>
+          └ _IncludedRouter(original_router=<fastapi.routing.APIRouter object at 0x0000020C313106E0>, include_context=_RouterIncludeConte...
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1670, in _handle_selected
+    await original_route.handle(scope, receive, send)
+          │              │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │              │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │              │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │              └ <function APIRoute.handle at 0x0000020C3158A020>
+          └ APIRoute(path='/ingest', name='submit_ingest', methods=['POST'])
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 1218, in handle
+    await app(scope, receive, send)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app at 0x0000020C58FCE520>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 143, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C58FCE020>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x0000020C58CDB2C0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000020C58FCC9A0>
+          └ <function wrap_app_handling_exceptions at 0x0000020C31556200>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000020C5884B1A0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000020...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.3'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8000), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000020C58FCC9A0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 129, in app
+    response = await f(request)
+                     │ └ <starlette.requests.Request object at 0x0000020C58CDB2C0>
+                     └ <function get_request_handler.<locals>.app at 0x0000020C58FCE7A0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 683, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x0000020C31589620>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\fastapi\routing.py", line 337, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'req': IngestRequest(url=HttpUrl('https://docs.bakuun.com/'), max_depth=None, max_pages=None, from_sitemap=True)}
+                 │         └ <function submit_ingest at 0x0000020C57E7FA60>
+                 └ Dependant(path_params=[], query_params=[], header_params=[], cookie_params=[], body_params=[ModelField(field_info=Body(Pydant...
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\api\routes\ingest.py", line 20, in submit_ingest
+    return await ingest_url(
+                 └ <function ingest_url at 0x0000020C31695C60>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 153, in ingest_url
+    return await service.ingest_url(
+                 │       └ <function IngestionService.ingest_url at 0x0000020C57E7F920>
+                 └ <app.services.ingest_service.IngestionService object at 0x0000020C58FEAF90>
+
+> File "D:\Work\Personal\RAG\rag-url-system\app\services\ingest_service.py", line 107, in ingest_url
+    vectors = await self.embedder.embed_texts([c.text for c in new_chunks])
+                    │    │        │                            └ [Chunk(text='## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs...
+                    │    │        └ <function BaseEmbedder.embed_texts at 0x0000020C317B9440>
+                    │    └ <app.core.embeddings.VoyageEmbedder object at 0x0000020C590438F0>
+                    └ <app.services.ingest_service.IngestionService object at 0x0000020C58FEAF90>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 98, in embed_texts
+    results = await asyncio.gather(*(run(i, b) for i, b in enumerate(batches)))
+                    │       │        │                               └ [['## [Bakuun Connectivity Hub ![Website logo](https://archbee-image-uploads.s3.amazonaws.com/cW-jsON5gh-nGR4FOcSNs/3fr4K24QJ...
+                    │       │        └ <function BaseEmbedder.embed_texts.<locals>.run at 0x0000020C5AED5800>
+                    │       └ <function gather at 0x0000020C2FE4DE40>
+                    └ <module 'asyncio' from 'C:\\Users\\cepl\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\__init__.py'>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 94, in run
+    vectors = await self._embed_batch(batch, "document")
+                    │    │            └ ['00 EUR per stay Not Included", "taxCurrency": "EUR", "taxValue": "1000.00" } ] }, "afterTax": { "taxFeeDetails": [ { "taxTy...
+                    │    └ <function BaseEmbedder._embed_batch at 0x0000020C317B93A0>
+                    └ <app.core.embeddings.VoyageEmbedder object at 0x0000020C590438F0>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 71, in _embed_batch
+    async for attempt in AsyncRetrying(
+              │          └ <class 'tenacity.asyncio.AsyncRetrying'>
+              └ <tenacity.AttemptManager object at 0x0000020C59174140>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 170, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 2252061662512: attempt #6; slept for 17.04; last result: failed (RateLimitError You have not yet added your p...
+               │    │                └ <AsyncRetrying object at 0x20c5955fd40 (stop=<tenacity.stop.stop_after_attempt object at 0x0000020C5B3A5460>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x0000020C31705080>
+               └ <AsyncRetrying object at 0x20c5955fd40 (stop=<tenacity.stop.stop_after_attempt object at 0x0000020C5B3A5460>, wait=<tenacity....
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 2252061662512: attempt #6; slept for 17.04; last result: failed (RateLimitError You have not yet added your p...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000020C5AEBFD80>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 2252061662512: attempt #6; slept for 17.04; last result: failed (RateLimitError You have not yet added your ...
+           └ <function BaseRetrying._post_stop_check_actions.<locals>.exc_check at 0x0000020C5AEBFF60>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          │         └ <function RetryError.reraise at 0x0000020C316EE480>
+          └ RetryError(<Future at 0x20c5afe3e90 state=finished raised RateLimitError>)
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          │    │            └ <function Future.result at 0x0000020C2E439EE0>
+          │    └ <Future at 0x20c5afe3e90 state=finished raised RateLimitError>
+          └ RetryError(<Future at 0x20c5afe3e90 state=finished raised RateLimitError>)
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 79, in _embed_batch
+    return await self._embed_raw(batch, input_type)
+                 │    │          │      └ 'document'
+                 │    │          └ ['00 EUR per stay Not Included", "taxCurrency": "EUR", "taxValue": "1000.00" } ] }, "afterTax": { "taxFeeDetails": [ { "taxTy...
+                 │    └ <function VoyageEmbedder._embed_raw at 0x0000020C317B9940>
+                 └ <app.core.embeddings.VoyageEmbedder object at 0x0000020C590438F0>
+
+  File "D:\Work\Personal\RAG\rag-url-system\app\core\embeddings.py", line 186, in _embed_raw
+    resp = await self._client.embed(
+                 │    │       └ <function AsyncClient.embed at 0x0000020C58AC2DE0>
+                 │    └ <voyageai.client_async.AsyncClient object at 0x0000020C58FEAF60>
+                 └ <app.core.embeddings.VoyageEmbedder object at 0x0000020C590438F0>
+
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\client_async.py", line 79, in embed
+    async for attempt in self._make_retry_controller():
+              │          │    └ <function AsyncClient._make_retry_controller at 0x0000020C58AC2CA0>
+              │          └ <voyageai.client_async.AsyncClient object at 0x0000020C58FEAF60>
+              └ <tenacity.AttemptManager object at 0x0000020C591752E0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 170, in __anext__
+    do = await self.iter(retry_state=self._retry_state)
+               │    │                │    └ <RetryCallState 2252057573184: attempt #1; slept for 0.0; last result: failed (RateLimitError You have not yet added your pay...
+               │    │                └ <AsyncRetrying object at 0x20c591775f0 (stop=<tenacity.stop.stop_after_attempt object at 0x0000020C591771A0>, wait=<tenacity....
+               │    └ <function AsyncRetrying.iter at 0x0000020C31705080>
+               └ <AsyncRetrying object at 0x20c591775f0 (stop=<tenacity.stop.stop_after_attempt object at 0x0000020C591771A0>, wait=<tenacity....
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\asyncio\__init__.py", line 157, in iter
+    result = await action(retry_state)
+                   │      └ <RetryCallState 2252057573184: attempt #1; slept for 0.0; last result: failed (RateLimitError You have not yet added your pay...
+                   └ <function wrap_to_async_func.<locals>.inner at 0x0000020C5AEBFCE0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           │     │       └ {}
+           │     └ (<RetryCallState 2252057573184: attempt #1; slept for 0.0; last result: failed (RateLimitError You have not yet added your pa...
+           └ <function BaseRetrying._post_stop_check_actions.<locals>.exc_check at 0x0000020C5AEBFC40>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          │         └ <function RetryError.reraise at 0x0000020C316EE480>
+          └ RetryError(<Future at 0x20c5b3a9ac0 state=finished raised RateLimitError>)
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          │    │            └ <function Future.result at 0x0000020C2E439EE0>
+          │    └ <Future at 0x20c5b3a9ac0 state=finished raised RateLimitError>
+          └ RetryError(<Future at 0x20c5b3a9ac0 state=finished raised RateLimitError>)
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           └ None
+  File "C:\Users\cepl\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+          └ None
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\client_async.py", line 81, in embed
+    response = await voyageai.Embedding.acreate(
+                     │        │         └ <classmethod(<function Embedding.acreate at 0x0000020C58895B20>)>
+                     │        └ <class 'voyageai.api_resources.embedding.Embedding'>
+                     └ <module 'voyageai' from 'D:\\Work\\Personal\\RAG\\venv\\Lib\\site-packages\\voyageai\\__init__.py'>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\api_resources\embedding.py", line 44, in acreate
+    response = await super().acreate(*args, **kwargs)
+                                      │       └ {'input': ['00 EUR per stay Not Included", "taxCurrency": "EUR", "taxValue": "1000.00" } ] }, "afterTax": { "taxFeeDetails": ...
+                                      └ ()
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\api_resources\api_resource.py", line 69, in acreate
+    response = await requestor.arequest(
+                     │         └ <function APIRequestor.arequest at 0x0000020C5885BE20>
+                     └ <voyageai.api_resources.api_requestor.APIRequestor object at 0x0000020C591757C0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\api_resources\api_requestor.py", line 174, in arequest
+    resp = await self._interpret_async_response(result)
+                 │    │                         └ <ClientResponse(https://api.voyageai.com/v1/embeddings) [429 Too Many Requests]>
+                 │    │                           <CIMultiDictProxy('Date': 'Sat, 20 Jun 2026 ...
+                 │    └ <function APIRequestor._interpret_async_response at 0x0000020C588942C0>
+                 └ <voyageai.api_resources.api_requestor.APIRequestor object at 0x0000020C591757C0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\api_resources\api_requestor.py", line 408, in _interpret_async_response
+    return self._interpret_response_line(
+           │    └ <function APIRequestor._interpret_response_line at 0x0000020C58894360>
+           └ <voyageai.api_resources.api_requestor.APIRequestor object at 0x0000020C591757C0>
+  File "D:\Work\Personal\RAG\venv\Lib\site-packages\voyageai\api_resources\api_requestor.py", line 445, in _interpret_response_line
+    raise self.handle_error_response(rbody, rcode, resp.data, rheaders)
+          │    │                     │      │      │    │     └ <CIMultiDictProxy('Date': 'Sat, 20 Jun 2026 11:49:06 GMT', 'Server': 'uvicorn', 'Content-Length': '601', 'Content-Type': 'app...
+          │    │                     │      │      │    └ {'detail': 'You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K...
+          │    │                     │      │      └ <voyageai.api_resources.api_requestor.VoyageHttpResponse object at 0x0000020C5B2DDEB0>
+          │    │                     │      └ 429
+          │    │                     └ '{"detail":"You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K...
+          │    └ <function APIRequestor.handle_error_response at 0x0000020C58894400>
+          └ <voyageai.api_resources.api_requestor.APIRequestor object at 0x0000020C591757C0>
+
+voyageai.error.RateLimitError: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.

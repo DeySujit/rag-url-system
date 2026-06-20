@@ -21,4 +21,5 @@ async def submit_ingest(req: IngestRequest) -> IngestResult:
         str(req.url),
         max_depth=req.max_depth,
         max_pages=req.max_pages,
+        from_sitemap=req.from_sitemap,
     )

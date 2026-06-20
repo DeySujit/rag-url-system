@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from loguru import logger
 
-from app.core.embeddings import Embedder
+from app.core.embeddings import BaseEmbedder, get_embedder
 from app.core.llm import LLM
 from app.core.prompt import SYSTEM_PROMPT, build_user_prompt
 from app.core.vectorstore import VectorStore, get_vector_store
@@ -13,11 +13,11 @@ from app.models.schemas import QueryResponse
 class RAGService:
     def __init__(
         self,
-        embedder: Embedder | None = None,
+        embedder: BaseEmbedder | None = None,
         store: VectorStore | None = None,
         llm: LLM | None = None,
     ) -> None:
-        self.embedder = embedder or Embedder()
+        self.embedder = embedder or get_embedder()
         self.store = store or get_vector_store()
         self.llm = llm or LLM()
 

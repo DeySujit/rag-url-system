@@ -16,7 +16,7 @@ import uuid
 
 from loguru import logger
 
-from app.core.embeddings import Embedder
+from app.core.embeddings import BaseEmbedder, get_embedder
 from app.core.loader import WebCrawler
 from app.core.splitter import SemanticChunker
 from app.core.vectorstore import VectorStore, get_vector_store
@@ -35,12 +35,12 @@ class IngestionService:
         self,
         crawler: WebCrawler | None = None,
         chunker: SemanticChunker | None = None,
-        embedder: Embedder | None = None,
+        embedder: BaseEmbedder | None = None,
         store: VectorStore | None = None,
     ) -> None:
         self.crawler = crawler or WebCrawler()
         self.chunker = chunker or SemanticChunker()
-        self.embedder = embedder or Embedder()
+        self.embedder = embedder or get_embedder()
         self.store = store or get_vector_store()
 
     async def ingest_url(
@@ -48,6 +48,7 @@ class IngestionService:
         url: str,
         max_depth: int | None = None,
         max_pages: int | None = None,
+        from_sitemap: bool = False,
         job_id: str | None = None,
     ) -> IngestResult:
         job_id = job_id or uuid.uuid4().hex
@@ -66,7 +67,15 @@ class IngestionService:
 
             # 1. Crawl --------------------------------------------------------
             await meta.update_job(job_id, status=IngestStatus.CRAWLING)
-            pages = await self.crawler.crawl(str(url))
+            if from_sitemap:
+                # Crawl every URL listed in the site's sitemap. max_pages, when
+                # given, caps how many we take; otherwise we take them all.
+                sitemap_urls = await self.crawler.fetch_sitemap_urls(str(url))
+                if max_pages is not None:
+                    sitemap_urls = sitemap_urls[:max_pages]
+                pages = await self.crawler.crawl_urls(sitemap_urls)
+            else:
+                pages = await self.crawler.crawl(str(url))
             result.pages_crawled = len(pages)
             if not pages:
                 logger.warning("No content crawled from {}", url)
@@ -137,7 +146,10 @@ async def ingest_url(
     url: str,
     max_depth: int | None = None,
     max_pages: int | None = None,
+    from_sitemap: bool = False,
 ) -> IngestResult:
     """Convenience entrypoint:  await ingest_url("https://example.com")."""
     service = IngestionService()
-    return await service.ingest_url(url, max_depth=max_depth, max_pages=max_pages)
+    return await service.ingest_url(
+        url, max_depth=max_depth, max_pages=max_pages, from_sitemap=from_sitemap
+    )
