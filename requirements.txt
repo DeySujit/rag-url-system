@@ -21,11 +21,7 @@ tenacity>=8.3
 # ---- vector store: default backend (pgvector via Postgres) ----
 asyncpg>=0.29
 sqlalchemy[asyncio]>=2.0
-psycopg[binary]>=3.1      # sync driver for migrations/celery if needed
-
-# ---- task queue ----
-celery>=5.4
-redis>=5.0
+psycopg[binary]>=3.1      # sync driver for migrations
 
 # ---- logging ----
 loguru>=0.7

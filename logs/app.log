@@ -1,0 +1,2 @@
+2026-06-20 15:15:24.267 | INFO     | app.core.vectorstore:get_vector_store:573 - Using vector backend: pgvector
+2026-06-20 15:15:24.348 | INFO     | app.core.vectorstore:ensure_collection:115 - pgvector collection 'rag_chunks' ready (dim=2048)

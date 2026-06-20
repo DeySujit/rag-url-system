@@ -26,7 +26,7 @@ await ingest_url("https://example.com")
 | Vector DB abstraction  | `app/core/vectorstore.py` — pgvector / Pinecone / Qdrant / Weaviate / Milvus behind one interface |
 | Dedup + skip indexed   | content-hash ids + `indexed_chunks` table (`app/db/metadata.py`) |
 | Status tracking        | `ingest_jobs` table, per-stage updates, partial-failure recovery |
-| Async + scale          | asyncio crawling/embedding, bounded concurrency, batched upserts, Celery workers |
+| Async + scale          | asyncio crawling/embedding, bounded concurrency, batched upserts |
 
 ---
 
@@ -46,37 +46,32 @@ python -m playwright install --with-deps chromium
 ## 2. Configure
 
 ```bash
-cp .env.example .env      # then fill in OPENAI_API_KEY and DB/Redis settings
+cp .env.example .env      # then fill in OPENAI_API_KEY and DB settings
 ```
 
 Key variables: `OPENAI_API_KEY`, `VECTOR_BACKEND` (default `pgvector`),
-`DB_*_LOCAL`, `REDIS_URL`. See `.env.example` for the full list.
+`DB_*_LOCAL`. See `.env.example` for the full list.
 
-## 3. Run infrastructure
+## 3. Postgres (pgvector)
 
-```bash
-docker compose up -d postgres redis     # pgvector + redis
-# or bring up the whole stack (api + worker):
-docker compose up --build
+Use a local PostgreSQL with the `pgvector` extension, reachable at the
+`DB_*_LOCAL` settings above. Enable the extension once per database:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
 ```
+
+The app auto-creates its tables and the vector collection on first run.
 
 ## 4. Ingest
 
-**In-process (simplest):**
-```bash
-python -m examples.ingest_example https://example.com
-```
-
-**Via the API (async job + Celery worker):**
 ```bash
 uvicorn app.main:app --reload                                  # terminal 1
-celery -A app.worker.celery_app.celery_app worker -l INFO      # terminal 2
 
 curl -X POST localhost:8000/ingest -H 'content-type: application/json' \
      -d '{"url":"https://example.com","max_depth":1,"max_pages":20}'
-# -> {"job_id":"...","status":"pending"}
+# -> runs synchronously, returns the IngestResult when done
 
-curl localhost:8000/ingest/<job_id>      # poll status
 curl -X POST localhost:8000/query -H 'content-type: application/json' \
      -d '{"query":"What is this site about?","top_k":5}'
 ```
@@ -96,7 +91,7 @@ app/
 ├── main.py                  FastAPI app + logging
 ├── config.py                pydantic-settings (all env vars)
 ├── api/routes/
-│   ├── ingest.py            POST /ingest -> job_id, GET /ingest/{id}
+│   ├── ingest.py            POST /ingest -> crawl+embed+store (synchronous)
 │   └── query.py             POST /query  -> RAG answer
 ├── core/
 │   ├── loader.py            async crawler + HTML->markdown cleaning
@@ -111,10 +106,7 @@ app/
 ├── services/
 │   ├── ingest_service.py    ingest_url() orchestration
 │   └── rag_service.py       retrieval + answer generation
-├── models/schemas.py        pydantic models (Chunk, VectorRecord, ...)
-└── worker/
-    ├── celery_app.py        Celery (Redis broker)
-    └── tasks.py             background ingestion task
+└── models/schemas.py        pydantic models (Chunk, VectorRecord, ...)
 examples/ingest_example.py   runnable end-to-end demo
 migrations/001_pgvector.sql  manual schema bootstrap
 tests/                       offline unit tests
@@ -132,8 +124,6 @@ keeps the uniform `{id, embedding, text, metadata}` shape.
 - **Idempotent**: vector ids are content hashes, so re-ingesting a URL upserts
   in place and `filter_new_chunks()` skips anything already in `indexed_chunks`.
 - **Throughput**: tune `CRAWL_CONCURRENCY`, `EMBEDDING_MAX_CONCURRENCY`,
-  `EMBEDDING_BATCH_SIZE`, `UPSERT_BATCH_SIZE`. Scale out Celery workers
-  horizontally for millions of documents.
-- **Recovery**: each stage persists status to `ingest_jobs`; `task_acks_late`
-  redelivers jobs if a worker dies mid-run.
-```
+  `EMBEDDING_BATCH_SIZE`, `UPSERT_BATCH_SIZE`.
+- **Recovery**: each stage persists status to `ingest_jobs`, so a failed run
+  records exactly where it stopped.

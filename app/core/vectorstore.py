@@ -97,10 +97,15 @@ class PgVectorStore(VectorStore):
                 """
             )
             # HNSW index for cosine similarity (fast ANN at scale).
+            # The regular `vector` type caps HNSW at 2000 dims, so for higher
+            # dimensions (e.g. text-embedding-3-large at 2048) we index a
+            # `halfvec` cast — HNSW supports halfvec up to 4000 dims with
+            # negligible recall loss. Queries must cast to halfvec to match.
             await conn.execute(
                 f"""
                 CREATE INDEX IF NOT EXISTS {self.collection}_emb_idx
-                ON {self.collection} USING hnsw (embedding vector_cosine_ops);
+                ON {self.collection}
+                USING hnsw ((embedding::halfvec({self.dimension})) halfvec_cosine_ops);
                 """
             )
             await conn.execute(
@@ -153,10 +158,10 @@ class PgVectorStore(VectorStore):
             rows = await conn.fetch(
                 f"""
                 SELECT id, text, metadata,
-                       1 - (embedding <=> $1::vector) AS score
+                       1 - (embedding::halfvec({self.dimension}) <=> $1::halfvec({self.dimension})) AS score
                 FROM {self.collection}
                 WHERE namespace = $2
-                ORDER BY embedding <=> $1::vector
+                ORDER BY embedding::halfvec({self.dimension}) <=> $1::halfvec({self.dimension})
                 LIMIT $3;
                 """,
                 self._vec_literal(vector), self.namespace, top_k,

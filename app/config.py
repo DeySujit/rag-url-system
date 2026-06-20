@@ -28,8 +28,9 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     environment: str = Field(default="development")
 
-    # ----- OpenAI / Embeddings -----
-    openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
+    # ----- OpenAI or GROQ / Embeddings -----
+    # openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
+    openai_api_key: str = Field(default="", alias="GROQ_API_KEY")
     embedding_model: str = "text-embedding-3-large"
     # text-embedding-3-large supports the `dimensions` param up to 3072.
     embedding_dimension: int = 2048
@@ -84,9 +85,6 @@ class Settings(BaseSettings):
     db_password_local: str = Field(default="postgres", alias="DB_PASSWORD_LOCAL")
     db_host_local: str = Field(default="localhost", alias="DB_HOST_LOCAL")
     db_port_local: int = Field(default=5432, alias="DB_PORT_LOCAL")
-
-    # ----- Redis / Celery -----
-    redis_url: str = Field(default="redis://localhost:6379/0", alias="REDIS_URL")
 
     @computed_field  # type: ignore[prop-decorator]
     @property
